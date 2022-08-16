@@ -2,3 +2,13 @@
    --primary: #29237a;
    --icon-color: #fff;
 }
+
+@font-face {
+   font-family: "vazir";
+   src: url(../public/fonts/Vazir.woff2);
+}
+
+@font-face {
+   font-family: "vazir-bold";
+   src: url(../public/fonts/Vazir-Bold.woff2);
+}
