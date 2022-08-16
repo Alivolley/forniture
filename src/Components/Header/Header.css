@@ -1,0 +1,12 @@
+.social-nav {
+   background-color: var(--primary);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 45px;
+}
+
+.social-nav__link {
+   color: var(--icon-color);
+   font-size: 25px;
+}
