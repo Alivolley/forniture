@@ -1,0 +1,50 @@
+.hamber-menu {
+   direction: rtl;
+   background-color: var(--primary);
+   position: absolute;
+   top: 0;
+   right: -100%;
+   z-index: 999;
+   width: 250px;
+   height: 350px;
+   border-top-left-radius: 150px;
+   border-bottom-left-radius: 250px;
+   transition: all 0.5s;
+}
+
+.hamber-menu-logo {
+   width: 100px;
+   height: 100px;
+   object-fit: contain;
+   margin: 20px 20px 0 0;
+}
+
+.hember-menu__list {
+   padding-right: 30px;
+   list-style: none;
+}
+
+.hamber-menu__items {
+   padding-bottom: 10px;
+}
+
+.hamber-menu__link {
+   color: var(--icon-color);
+   text-decoration: none;
+   font-family: "vazir";
+}
+
+.hamber-menu__open {
+   right: 0;
+}
+
+.hember-menu-closer {
+   color: var(--icon-color);
+   width: 30px;
+   height: 30px;
+   transform: rotate(180deg);
+   display: block;
+   margin-right: auto;
+   margin-left: 40px;
+   border-radius: 3px;
+}

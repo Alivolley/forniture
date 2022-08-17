@@ -4,10 +4,18 @@ import Slides from "./Components/Header/Slides";
 
 function App() {
    return (
-      <div>
+      <>
          <Header></Header>
          <Slides></Slides>
-      </div>
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
+         <br />
+      </>
    );
 }
 

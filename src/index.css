@@ -12,3 +12,8 @@
    font-family: "vazir-bold";
    src: url(../public/fonts/Vazir-Bold.woff2);
 }
+
+#root {
+   position: relative;
+   overflow: hidden;
+}

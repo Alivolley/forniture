@@ -125,3 +125,12 @@
    width: 100px;
    height: 80px;
 }
+
+.menu-opener {
+   display: none;
+   width: 35px;
+   height: 35px;
+   border: none;
+   border-radius: 5px;
+   font-size: 26px;
+}
