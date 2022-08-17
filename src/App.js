@@ -1,22 +1,12 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
-import Slides from "./Components/Header/Slides";
+import Home from "./Components/Home/Home";
+import { useRoutes } from "react-router-dom";
+import { routes } from "./Components/routes/routes";
 
 function App() {
-   return (
-      <>
-         <Header></Header>
-         <Slides></Slides>
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-      </>
-   );
+   let router = useRoutes(routes);
+
+   return <>{router}</>;
 }
 
 export default App;

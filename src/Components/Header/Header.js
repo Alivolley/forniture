@@ -5,7 +5,7 @@ import { CgMenuMotion } from "react-icons/cg";
 import { FaTwitter, FaUserAlt } from "react-icons/fa";
 import { BsWhatsapp, BsTelegram, BsFillTelephoneFill, BsSearch } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import CollapseMenu from "./CollapseMenu";
 
 export default function Header() {
@@ -57,14 +57,18 @@ export default function Header() {
                      </button>
                   </li>
                   <li className="menu-leftSide__items">
-                     <button className="menu-leftSide__btn">
-                        <AiOutlineShoppingCart className="menu-leftSide__icon" />
-                     </button>
+                     <Link to="/">
+                        <button className="menu-leftSide__btn">
+                           <AiOutlineShoppingCart className="menu-leftSide__icon" />
+                        </button>
+                     </Link>
                   </li>
                   <li className="menu-leftSide__items">
-                     <button className="menu-leftSide__btn">
-                        <FaUserAlt className="menu-leftSide__icon" />
-                     </button>
+                     <Link to="/account">
+                        <button className="menu-leftSide__btn">
+                           <FaUserAlt className="menu-leftSide__icon" />
+                        </button>
+                     </Link>
                   </li>
                </ul>
                <ul className="menu-rightSide">

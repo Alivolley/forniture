@@ -1,0 +1,109 @@
+.account {
+}
+
+.account-row {
+   height: 500px;
+   background-color: var(--section-bg);
+   border: 2px solid var(--primary);
+   /* padding: 15px; */
+}
+
+.account-left-img {
+   background-image: url(../../../public/pics/login-pic.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+   margin-top: 15px;
+}
+
+.account-login-part {
+   direction: rtl;
+   color: var(--primary);
+   font-family: "vazir";
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   padding-right: 100px;
+}
+
+.account-form {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   margin-top: 50px;
+}
+
+.account-login__title {
+   margin-top: 35px;
+}
+
+.account-input__holder {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 400px;
+}
+
+.account-input {
+   background-color: var(--primary);
+   border: none;
+   width: 300px;
+   margin: 0 10px;
+   padding: 9px;
+   color: var(--icon-color);
+   font-family: "vazir";
+   border-radius: 20px;
+   font-weight: 400;
+   font-size: 15px;
+   transition: all 0.2s;
+}
+
+.account-check__holder {
+   display: flex;
+   gap: 15px;
+   margin-top: 15px;
+}
+
+.account-check {
+   width: 20px;
+   height: 20px;
+}
+
+.account-input:focus {
+   outline: 3px solid var(--primary);
+   background-color: var(--icon-color);
+   color: var(--primary);
+}
+
+.account-input:focus::placeholder {
+   color: var(--primary);
+}
+
+.account-input::placeholder {
+   color: rgba(255, 255, 255, 0.5);
+   font-family: "vazir";
+}
+
+.form-submit {
+   border: 3px solid var(--icon-color);
+   outline: 3px solid var(--primary);
+   padding: 7px;
+   width: 150px;
+   margin-top: 20px;
+   background-color: var(--primary);
+   border-radius: 20px;
+   color: var(--icon-color);
+   cursor: pointer;
+   font-size: 15px;
+   font-family: "vazir";
+   transition: all 0.2s;
+}
+
+.form-submit:hover {
+   border: 3px solid var(--primary);
+   outline: 3px solid var(--icon-color);
+   background-color: var(--icon-color);
+   color: var(--primary);
+}

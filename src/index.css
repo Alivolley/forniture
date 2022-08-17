@@ -1,6 +1,7 @@
 :root {
    --primary: #29237a;
    --icon-color: #fff;
+   --section-bg: rgba(75, 70, 144, 0.137);
 }
 
 @font-face {

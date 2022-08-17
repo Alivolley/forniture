@@ -6,6 +6,10 @@
    .social-nav {
       justify-content: center !important;
    }
+
+   .account-input {
+      padding: 7px;
+   }
 }
 
 @media (max-width: 576px) {
@@ -24,6 +28,22 @@
       width: 10px !important;
       height: 10px !important;
    }
+
+   .account-input__holder {
+      width: auto !important;
+   }
+
+   .account-input {
+      width: 180px !important;
+   }
+
+   .account-input__label {
+      font-size: 12px !important;
+   }
+
+   .account-login__title {
+      font-size: 20px;
+   }
 }
 
 /* md */
@@ -39,6 +59,14 @@
 
    .menu-opener {
       display: block !important;
+   }
+
+   .account-login-part {
+      align-items: center;
+   }
+
+   .account-row {
+      justify-content: center;
    }
 }
 
@@ -57,6 +85,10 @@
 
    .menu-logo {
       display: none;
+   }
+
+   .account-login-part {
+      padding-right: 0 !important;
    }
 }
 
