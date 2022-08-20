@@ -1,6 +1,24 @@
 .account {
 }
 
+.account-error {
+   position: absolute;
+   direction: rtl;
+   font-family: "vazir";
+   background-color: var(--alerts-bg);
+   padding: 25px;
+   color: var(--primary);
+   top: 100px;
+   border-radius: 30px;
+   left: -100%;
+   transition: all 0.4s;
+}
+
+.account-error__show {
+   transition: all 0.4s;
+   left: 7%;
+}
+
 .account-row {
    height: 500px;
    background-color: var(--section-bg);

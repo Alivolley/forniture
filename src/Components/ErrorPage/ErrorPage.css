@@ -1,0 +1,19 @@
+.redirect-account-h {
+   direction: rtl;
+   font-family: "vazir";
+   text-align: center;
+   background-color: var(--primary);
+   color: var(--icon-color);
+   padding: 20px;
+   margin-top: 70px;
+}
+
+.redirect-account-p {
+   direction: rtl;
+   font-family: "vazir";
+   text-align: center;
+   background-color: var(--primary);
+   color: var(--icon-color);
+   padding: 20px;
+   /* margin-top: 70px; */
+}
