@@ -1,0 +1,27 @@
+.dashboard-side {
+   direction: rtl;
+   margin-top: 20px;
+   font-family: "vazir";
+}
+
+.dashboard-sidebar__list {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+}
+
+.dashboard-sidebar__items {
+   background-color: var(--primary);
+   color: var(--icon-color);
+   padding: 15px;
+   text-decoration: none;
+   border: 3px solid var(--secondary);
+   width: 50%;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   transition: all 0.4s;
+}
+
+.dashboard-sidebar__items--active {
+   width: 80%;
+}

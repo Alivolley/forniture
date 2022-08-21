@@ -125,7 +125,7 @@ export default function Account() {
                </div>
             </div>
          </div>
-         {navigate === "not" ? <Navigate to="/error" /> : navigate === "yes" ? <Navigate to="/dashbaord" /> : null}
+         {navigate === "not" ? <Navigate to="/error" /> : navigate === "yes" ? <Navigate to="/dashboard" /> : null}
       </section>
    );
 }

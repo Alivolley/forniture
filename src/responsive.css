@@ -110,7 +110,7 @@
       width: 70% !important;
    }
 
-   .dashboard-sidebar__items--active {
+   .active {
       width: 100% !important;
    }
 }

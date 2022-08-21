@@ -73,29 +73,29 @@ export default function Header() {
                </ul>
                <ul className="menu-rightSide">
                   <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
+                     <Link to="/" className="menu-rightSide__link">
                         درباره ما
-                     </NavLink>
+                     </Link>
                   </li>
                   <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
+                     <Link to="/" className="menu-rightSide__link">
                         تماس با ما
-                     </NavLink>
+                     </Link>
                   </li>
                   <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
+                     <Link to="/" className="menu-rightSide__link">
                         دسته بندی ها
-                     </NavLink>
+                     </Link>
                   </li>
                   <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
+                     <Link to="/" className="menu-rightSide__link">
                         محصولات
-                     </NavLink>
+                     </Link>
                   </li>
                   <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
+                     <Link to="/" className="menu-rightSide__link">
                         صفحه اصلی
-                     </NavLink>
+                     </Link>
                   </li>
                   <img className="menu-logo" src="pics/logoBig.png" alt="" />
                </ul>
