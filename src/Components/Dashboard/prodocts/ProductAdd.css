@@ -1,0 +1,114 @@
+.add-product {
+   /* background-color: var(--primary); */
+   border: 2px solid var(--primary);
+   padding: 10px;
+   direction: rtl;
+   margin-top: 50px;
+   font-family: "vazir";
+}
+
+.add-product-form {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.add-product-picture__wrapper,
+.add-product-Category__wrapper,
+.add-product-name__wrapper,
+.add-product-desc__wrapper,
+.add-product-price__wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 7px;
+}
+
+.add-product-picture {
+   background-color: var(--primary);
+   color: var(--icon-color);
+   height: 40px;
+   font-family: "vazir";
+   border-radius: 20px;
+   background-color: var(--primary);
+   padding: 0 10px;
+   font-size: 15px;
+   transition: all 0.2s;
+}
+
+.add-product-picture__items {
+}
+
+.add-product-Category {
+   background-color: var(--primary);
+   color: var(--icon-color);
+   height: 40px;
+   font-family: "vazir";
+   border-radius: 20px;
+   background-color: var(--primary);
+   padding: 9px;
+   border: none;
+   font-size: 15px;
+   transition: all 0.2s;
+}
+
+.add-product-Category__items {
+}
+
+.add-product-name,
+.add-product-desc,
+.add-product-price,
+.add-product-submit {
+   font-family: "vazir";
+   border-radius: 20px;
+   background-color: var(--primary);
+   padding: 9px;
+   border: none;
+   transition: all 0.2s;
+   color: var(--icon-color);
+}
+
+.add-product-submit {
+   background-color: var(--submit-bg);
+   margin-top: 30px;
+   border: 3px solid var(--icon-color);
+   outline: 3px solid var(--submit-bg);
+   cursor: pointer;
+   max-width: 300px;
+}
+
+.add-product-picture:focus,
+.add-product-Category:focus,
+.add-product-name:focus,
+.add-product-desc:focus,
+.add-product-price:focus {
+   background-color: var(--icon-color);
+   color: var(--primary);
+   outline: 3px solid var(--primary);
+}
+
+.add-product-submit:hover {
+   outline: 3px solid var(--icon-color);
+   border: 3px solid var(--submit-bg);
+   background-color: var(--icon-color);
+   color: var(--primary);
+}
+
+.add-product__modal {
+   position: fixed;
+   top: 50px;
+   right: 0;
+   background-color: var(--submit-bg);
+   display: flex;
+   height: 100px;
+   justify-content: center;
+   align-items: center;
+   border-radius: 20px;
+   padding: 10px;
+   opacity: 0.976;
+}
+
+.add-product__modal--icon {
+   color: red;
+   font-size: 25px;
+   cursor: pointer;
+}

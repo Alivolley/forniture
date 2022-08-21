@@ -1,0 +1,27 @@
+let pictures = [
+   { id: 1, name: "راحتی ۱", address: "/pics/rahatiPics/rahati (1).jpg" },
+   { id: 2, name: "راحتی ۲", address: "/pics/rahatiPics/rahati (2).jpg" },
+   { id: 3, name: "راحتی ۳", address: "/pics/rahatiPics/rahati (3).jpg" },
+   { id: 4, name: "راحتی ۴", address: "/pics/rahatiPics/rahati (4).jpg" },
+   { id: 5, name: "راحتی ۵", address: "/pics/rahatiPics/rahati (5).jpg" },
+   { id: 6, name: "راحتی ۶", address: "/pics/rahatiPics/rahati (6).jpg" },
+   { id: 7, name: "راحتی ۷", address: "/pics/rahatiPics/rahati (7).jpg" },
+   { id: 8, name: "راحتی ۸", address: "/pics/rahatiPics/rahati (8).jpg" },
+   { id: 9, name: "راحتی 9", address: "/pics/rahatiPics/rahati (9).jpg" },
+   { id: 10, name: "راحتی ۱۰", address: "/pics/rahatiPics/rahati (10).jpg" },
+   { id: 11, name: "کلاسیک ۱", address: "/pics/classicPics/classic (1).webp" },
+   { id: 12, name: "کلاسیک ۲", address: "/pics/classicPics/classic (2).jpg" },
+   { id: 13, name: "کلاسیک ۳", address: "/pics/classicPics/classic (3).jpg" },
+   { id: 14, name: "کلاسیک ۴", address: "/pics/classicPics/classic (4).jpg" },
+   { id: 15, name: "کلاسیک ۵", address: "/pics/classicPics/classic (5).jpg" },
+   { id: 16, name: "کلاسیک ۶", address: "/pics/classicPics/classic (6).jpeg" },
+   { id: 17, name: "کلاسیک ۷", address: "/pics/classicPics/classic (7).jpg" },
+   { id: 18, name: "کلاسیک ۱", address: "/pics/saltanatiPics/saltanati (1).jpeg" },
+   { id: 19, name: "کلاسیک ۲", address: "/pics/saltanatiPics/saltanati (2).jpg" },
+   { id: 20, name: "کلاسیک ۳", address: "/pics/saltanatiPics/saltanati (3).jpg" },
+   { id: 21, name: "کلاسیک ۴", address: "/pics/saltanatiPics/saltanati (4).jpg" },
+   { id: 22, name: "کلاسیک ۵", address: "/pics/saltanatiPics/saltanati (5).jpg" },
+   { id: 23, name: "کلاسیک ۶", address: "/pics/saltanatiPics/saltanati (6).jpg" },
+];
+
+export default pictures;

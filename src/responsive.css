@@ -126,6 +126,10 @@
    .hamber-menu {
       display: none !important;
    }
+
+   .add-product {
+      padding: 100px !important;
+   }
 }
 
 /* lg */
@@ -139,9 +143,15 @@
 /* xl */
 
 @media (min-width: 1200px) {
+   .add-product {
+      padding: 100px 200px !important;
+   }
 }
 
 /* xxl */
 
 @media (min-width: 1400px) {
+   .active {
+      width: 80% !important;
+   }
 }
