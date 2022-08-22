@@ -116,7 +116,7 @@ export default function Account() {
                            <label htmlFor="account-check">مرا به خاطر بسپار </label>
                         </div>
 
-                        <input id="form-submit" type="submit" className="form-submit" />
+                        <input id="form-submit" type="submit" className="form-submit" value="ورود" />
                      </form>
                   </div>
                </div>

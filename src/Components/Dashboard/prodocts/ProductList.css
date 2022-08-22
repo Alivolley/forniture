@@ -1,0 +1,38 @@
+.product-list {
+   margin-top: 50px;
+   margin-bottom: 50px;
+}
+
+.product-list-cart {
+   box-shadow: 0px 0px 15px 1px var(--primary);
+   border-radius: 8px;
+   direction: rtl;
+   font-family: "vazir";
+   padding: 20px;
+   color: var(--primary);
+}
+
+.product-list-img {
+   max-width: 100%;
+   height: 300px;
+   display: block;
+   margin: 0 auto;
+   margin-bottom: 35px;
+}
+
+.product-list-title {
+   text-align: center;
+   margin-bottom: 15px;
+}
+
+.product-list-type {
+   margin-bottom: 15px;
+}
+
+.product-list-desc {
+   margin-bottom: 15px;
+}
+
+.product-list-price {
+   margin-bottom: 15px;
+}

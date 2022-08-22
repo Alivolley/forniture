@@ -41,8 +41,12 @@ export default function ProductAdd() {
    const sendProductData = (event) => {
       event.preventDefault();
       if ((pictureValue, categoryValue, nameValue, descValue, priceValue)) {
+         let srcpicture = pictures.find((item) => {
+            return item.name === pictureValue;
+         });
+
          let newProduct = {
-            pictures: pictureValue,
+            pictures: srcpicture.address,
             Category: categoryValue,
             name: nameValue,
             description: descValue,
