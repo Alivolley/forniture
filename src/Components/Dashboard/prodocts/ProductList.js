@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Dashboard from "../Dashbaord";
 import "./ProductList.css";
-import pictures from "./productsPictures";
 
 export default function Productlist() {
    const [gottenProduct, setGottenProduct] = useState([]);
@@ -13,12 +12,6 @@ export default function Productlist() {
             setGottenProduct(Object.entries(data));
          });
    }, []);
-
-   // let foundedPicture = gottenProduct.find((product) => {
-   //    return product[1].pictures === pictures.name;
-   // });
-
-   // console.log(pictures.map((p) => p.name));
 
    return (
       <>

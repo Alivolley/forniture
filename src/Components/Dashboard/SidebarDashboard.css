@@ -22,6 +22,7 @@
    transition: all 0.4s;
 }
 
-.dashboard-sidebar__items--active {
+.dashboard-sidebar__list .active {
    width: 80%;
+   text-align: center;
 }

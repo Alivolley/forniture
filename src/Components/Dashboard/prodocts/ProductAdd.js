@@ -59,6 +59,11 @@ export default function ProductAdd() {
          }).then((res) => {
             if (res.status === 200) {
                setDoneModal(true);
+               setPictureValue("");
+               setCategoryValue("");
+               setNameValue("");
+               setDescValue("");
+               setPriceValue("");
             }
          });
       }
@@ -85,7 +90,14 @@ export default function ProductAdd() {
                <form action="" className="add-product-form" onSubmit={sendProductData}>
                   <div className="add-product-picture__wrapper">
                      <label htmlFor="add-product-picture">عکس خود را انتخاب کنید :</label>
-                     <select defaultValue="لطفا یک عکس انتخاب کنید ..." name="" id="add-product-picture" className="add-product-picture" onChange={putPictureValue}>
+                     <select
+                        defaultValue="لطفا یک عکس انتخاب کنید ..."
+                        name=""
+                        id="add-product-picture"
+                        className="add-product-picture"
+                        onChange={putPictureValue}
+                        value={pictureValue}
+                     >
                         <option value="لطفا یک عکس انتخاب کنید ..." className="add-product-picture__items" disabled>
                            لطفا یک عکس انتخاب کنید ...
                         </option>
@@ -102,7 +114,14 @@ export default function ProductAdd() {
 
                   <div className="add-product-Category__wrapper">
                      <label htmlFor="add-product-Category">دسته بندی :</label>
-                     <select defaultValue="دسته بندی" name="" id="add-product-Category" className="add-product-Category" onChange={putCategoryValue}>
+                     <select
+                        defaultValue="دسته بندی"
+                        name=""
+                        id="add-product-Category"
+                        className="add-product-Category"
+                        onChange={putCategoryValue}
+                        value={categoryValue}
+                     >
                         <option value="دسته بندی" className="add-product-Category__items" disabled>
                            دسته بندی
                         </option>

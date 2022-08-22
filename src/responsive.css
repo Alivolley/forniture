@@ -130,6 +130,10 @@
    .add-product {
       padding: 100px !important;
    }
+
+   .edit-modal .add-product-form {
+      width: 600px;
+   }
 }
 
 /* lg */
@@ -151,7 +155,4 @@
 /* xxl */
 
 @media (min-width: 1400px) {
-   .active {
-      width: 80% !important;
-   }
 }

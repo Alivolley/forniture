@@ -1,0 +1,125 @@
+.product-list-edit {
+   display: block;
+   margin: 30px auto 15px auto;
+   padding: 7px 25px;
+   font-family: "vazir";
+   background-color: var(--secondary);
+   color: var(--icon-color);
+   border: 2px solid var(--primary);
+   border-radius: 15px;
+   cursor: pointer;
+   font-size: 15px;
+}
+
+.product-list-edit:hover {
+   background-color: var(--icon-color);
+   color: var(--primary);
+   border: 2px solid var(--primary);
+}
+
+.edit-modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   backdrop-filter: blur(15px);
+   direction: rtl;
+   font-family: "vazir";
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.edit-modal .add-product-form {
+   background-color: var(--secondary);
+   padding: 35px;
+   gap: 10px;
+}
+
+.edit-modal__close-btn {
+   margin-top: -20px;
+   margin-bottom: 20px;
+   background-color: red;
+   border-radius: 30%;
+   color: var(--primary);
+   cursor: pointer;
+   font-size: 20px;
+}
+
+.edit-modal__close-btn:hover {
+   background-color: var(--primary);
+   color: red;
+}
+
+.edit-sure-qusetion {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   backdrop-filter: blur(20px);
+   direction: rtl;
+   font-family: "vazir";
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   /* background-color: var(); */
+}
+
+.edit-sure-qusetion__text {
+   background-color: var(--alerts-bg);
+   padding: 10px 20px;
+   border-radius: 20px;
+   margin-bottom: 15px;
+}
+
+.edit-sure-qusetion__yes,
+.edit-sure-qusetion__no {
+   font-family: "vazir";
+   width: 50%;
+   margin: 10px;
+   border: none;
+   padding: 5px;
+   border-radius: 12px;
+   cursor: pointer;
+   max-width: 380px;
+}
+
+.edit-sure-qusetion__no {
+   background-color: #db2834;
+}
+
+.edit-sure-qusetion__yes {
+   background-color: #14e687;
+}
+
+.edit-sure-qusetion__yes:hover {
+   background-color: #18b36d;
+}
+
+.edit-sure-qusetion__no:hover {
+   background-color: #ac252e;
+}
+
+.edit-product__modal {
+   position: fixed;
+   top: 50px;
+   right: 0;
+   background-color: var(--submit-bg);
+   display: flex;
+   height: 100px;
+   justify-content: center;
+   align-items: center;
+   border-radius: 20px;
+   padding: 10px;
+   opacity: 0.976;
+   font-family: "vazir";
+}
+
+.edit-product__modal--icon {
+   color: red;
+   font-size: 25px;
+   cursor: pointer;
+}

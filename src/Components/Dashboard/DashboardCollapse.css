@@ -22,7 +22,7 @@
    text-align: center;
 }
 
-.active {
+.dashboard-collapse__list .active {
    background-color: var(--secondary);
    border: 5px solid var(--primary);
    text-align: center;
