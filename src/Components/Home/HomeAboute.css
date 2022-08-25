@@ -1,0 +1,26 @@
+.home-aboute {
+   margin-top: 20px;
+}
+
+.home-aboute-img {
+   width: auto;
+   min-height: 500px;
+   background-image: url(../../../public/pics/HomeAboute.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 20px;
+}
+
+.home-aboute-describtion {
+   direction: rtl;
+   font-family: "vazir";
+}
+
+.home-aboute-describtion__title {
+   margin-bottom: 30px;
+   color: var(--primary);
+}
+
+.home-aboute-describtion__text {
+}

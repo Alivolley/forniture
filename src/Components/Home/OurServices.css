@@ -1,0 +1,23 @@
+.our-services {
+   margin-top: 100px;
+}
+
+.our-services-title {
+   text-align: center;
+   font-family: "vazir";
+   color: var(--primary);
+   position: relative;
+}
+
+.our-services-line {
+   width: 120px;
+   height: 5px;
+   border-radius: 50%;
+   background-color: var(--primary);
+   margin: 3px auto 20px auto;
+}
+
+.our-services-text {
+   text-align: center;
+   font-family: "vazir";
+}

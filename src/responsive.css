@@ -142,6 +142,17 @@
    .dashboard-collapse {
       display: none;
    }
+
+   .home-aboute {
+      margin-top: 100px !important;
+   }
+
+   .home-aboute-describtion {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
 }
 
 /* xl */
