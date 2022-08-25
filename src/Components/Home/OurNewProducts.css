@@ -1,0 +1,30 @@
+.new-products {
+   margin-top: 150px;
+}
+
+.new-products__show-all {
+   display: block;
+   margin: 0 auto;
+   padding: 15px 20px;
+   width: 250px;
+   text-align: center;
+   font-family: "vazir";
+   margin-top: 50px;
+   border: 2px solid var(--primary);
+   background-color: var(--section-bg);
+   border-radius: 30px;
+   color: var(--primary);
+   font-size: 17px;
+   text-decoration: none;
+   transition: all 0.2s;
+}
+
+.new-products__show-all:hover {
+   border: 2px solid var(--section-bg);
+   background-color: var(--primary);
+   color: var(--icon-color);
+}
+
+.product-list-edit {
+   transition: all 0.2s;
+}

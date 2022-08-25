@@ -161,6 +161,20 @@
    .add-product {
       padding: 100px 200px !important;
    }
+
+   .footer-main {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-evenly;
+   }
+
+   .footer-contact__link-wrapper {
+      flex-direction: row !important;
+   }
+
+   .footer-copy-right {
+      padding-top: 100px;
+   }
 }
 
 /* xxl */

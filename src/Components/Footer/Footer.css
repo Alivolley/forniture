@@ -1,0 +1,90 @@
+.footer {
+   background: linear-gradient(90deg, rgba(41, 35, 122, 1) 0%, rgba(78, 73, 153, 1) 100%);
+   margin-top: 100px;
+   border-top-right-radius: 45px;
+   border-top-left-radius: 45px;
+}
+
+.footer-fast-access {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   padding-top: 50px;
+}
+
+.footer-fast-access__item {
+   color: var(--icon-color);
+   text-decoration: none;
+   font-family: "vazir";
+   transition: all 0.2s;
+}
+
+.footer-fast-access__item:hover {
+   transform: scale(1.2);
+}
+
+.footer-contact {
+   font-family: "vazir";
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 60px;
+   padding-bottom: 60px;
+   color: var(--icon-color);
+}
+
+.footer-contact-desc {
+}
+
+.footer-contact__link-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 20px;
+}
+
+.footer-contact__link {
+   background-color: var(--submit-bg);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   border-radius: 5px;
+   transition: all 0.2s;
+}
+
+.footer-contact__link:hover {
+   transform: scale(1.2);
+}
+
+.footer-contact__link-telegram {
+   background-color: #2294cf;
+}
+
+.footer-contact__link-whatsapp {
+   background-color: #20e300;
+}
+
+.footer-contact__link-instagram {
+   background-color: #f7027f;
+}
+
+.footer-contact__link-twitter {
+   background-color: #00b8e3;
+}
+
+.footer-contact__icon {
+   width: 25px;
+   height: 25px;
+   color: var(--icon-color);
+}
+
+.footer-copy-right {
+   font-family: "vazir";
+   color: var(--icon-color);
+   text-align: center;
+   padding-bottom: 150px;
+}

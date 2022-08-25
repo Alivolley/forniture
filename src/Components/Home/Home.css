@@ -1,0 +1,8 @@
+.footer-separator {
+   max-width: 500px;
+   height: 15px;
+   background-color: var(--primary);
+   margin: 0 auto;
+   margin-top: 150px;
+   border-radius: 50%;
+}
