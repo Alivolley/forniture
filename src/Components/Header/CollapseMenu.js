@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./CollapseMenu.css";
 import { RiDeleteBack2Fill } from "react-icons/ri";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function CollapseMenu(props) {
+   const [showCat, setShowCat] = useState(false);
+
    const closeMenu = () => {
       props.setShowState();
    };
@@ -24,9 +27,30 @@ export default function CollapseMenu(props) {
                </NavLink>
             </li>
             <li className="hamber-menu__items">
-               <NavLink to="/" className="hamber-menu__link">
-                  دسته بندی ها
-               </NavLink>
+               <button to="/" className="hamber-menu__select" onClick={() => setShowCat((prev) => (prev = !prev))}>
+                  <IoMdArrowDropdown className="hamber-menu__select--icon"></IoMdArrowDropdown> دسته بندی ها
+                  {showCat && (
+                     <div className="hamber-menu__options">
+                        <Link to="/rahati">
+                           <option value="راحتی" className="hamber-menu__option">
+                              راحتی
+                           </option>
+                        </Link>
+                        <hr />
+                        <Link to="/saltanati">
+                           <option value="سلطنتی" className="hamber-menu__option">
+                              سلطنتی
+                           </option>
+                        </Link>
+                        <hr />
+                        <Link to="/classic">
+                           <option value="کلاسیک" className="hamber-menu__option">
+                              کلاسیک
+                           </option>
+                        </Link>
+                     </div>
+                  )}
+               </button>
             </li>
             <li className="hamber-menu__items">
                <NavLink to="/" className="hamber-menu__link">

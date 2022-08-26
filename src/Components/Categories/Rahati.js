@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./OurNewProducts.css";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 import RealCard from "../RealCard/RealCard";
 
-export default function OurNewProducts() {
+export default function Rahati() {
    const [newestProduct, setNewestProduct] = useState([]);
 
    useEffect(() => {
@@ -16,12 +16,13 @@ export default function OurNewProducts() {
 
    return (
       <>
+         <Header></Header>
          <div className="new-products containers">
-            <h2 className="our-services-title">جدیدترین محصولات ما</h2>
+            <h2 className="our-services-title">مبلمان راحتی </h2>
             <div className="our-services-line"></div>
             <div className="row">
-               {newestProduct.map((product, index) => {
-                  if (index < 3) {
+               {newestProduct.map((product) => {
+                  if (product[1].Category === "راحتی") {
                      return (
                         <RealCard
                            key={product[0]}
@@ -38,10 +39,8 @@ export default function OurNewProducts() {
                   }
                })}
             </div>
-            <Link to="/allproducts" className="new-products__show-all">
-               مشاهده ی تمام محصولات
-            </Link>
          </div>
+         <Footer></Footer>
       </>
    );
 }

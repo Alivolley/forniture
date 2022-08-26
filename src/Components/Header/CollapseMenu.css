@@ -48,3 +48,30 @@
    margin-left: 40px;
    border-radius: 3px;
 }
+
+.hamber-menu__select {
+   position: relative;
+   font-family: "vazir";
+   background-color: transparent;
+   border: none;
+   color: var(--icon-color);
+   font-size: 16px;
+}
+
+.hamber-menu__select--icon {
+}
+
+.hamber-menu__options {
+   position: absolute;
+   background-color: var(--icon-color);
+   right: 0;
+   left: 0;
+   text-align: start;
+   border: 1px solid var(--primary);
+   border-radius: 5px;
+}
+
+.hamber-menu__option {
+   color: var(--primary);
+   padding: 7px;
+}

@@ -139,3 +139,47 @@
    border-bottom: 3px solid var(--primary);
    border-radius: 5px;
 }
+
+.menu-rightSide__select {
+   font-family: "vazir";
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+   color: var(--primary);
+   position: relative;
+}
+
+.menu-rightSide__select--icon {
+   transition: all 0.3s;
+}
+
+.menu-rightSide__options {
+   position: absolute;
+   z-index: 20;
+   right: 0;
+   left: 0;
+   background-color: var(--icon-color);
+   text-align: end;
+   border: 1px solid var(--primary);
+   border-radius: 5px;
+   display: none;
+}
+
+.menu-rightSide__option {
+   padding: 10px 10px;
+   transition: all 0.2s;
+}
+
+.menu-rightSide__select:hover .menu-rightSide__options {
+   display: block;
+}
+
+.menu-rightSide__option:hover {
+   background-color: var(--primary);
+   color: var(--icon-color);
+}
+
+.menu-rightSide__select:hover .menu-rightSide__select--icon {
+   transform: rotate(-180deg);
+}

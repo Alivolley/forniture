@@ -25,6 +25,7 @@ export default function AllProducts() {
                {newestProduct.map((product) => {
                   return (
                      <RealCard
+                        key={product[0]}
                         keyName={product[0]}
                         pictures={product[1].pictures}
                         name={product[1].name}

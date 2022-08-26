@@ -3,6 +3,7 @@ import "./Header.css";
 import { AiOutlineInstagram, AiOutlineShoppingCart } from "react-icons/ai";
 import { CgMenuMotion } from "react-icons/cg";
 import { FaTwitter, FaUserAlt } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { BsWhatsapp, BsTelegram, BsFillTelephoneFill, BsSearch } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { NavLink, Link } from "react-router-dom";
@@ -23,18 +24,18 @@ export default function Header() {
             <div className="social">
                <section className="social-nav containers">
                   <div className="social_icons">
-                     <a href="#" className="social-nav__link">
+                     <Link to="/" href="#" className="social-nav__link">
                         <AiOutlineInstagram className="social-nav_icon" />
-                     </a>
-                     <a href="#" className="social-nav__link">
+                     </Link>
+                     <Link to="/" href="#" className="social-nav__link">
                         <FaTwitter className="social-nav_icon" />
-                     </a>
-                     <a href="#" className="social-nav__link">
+                     </Link>
+                     <Link to="/" href="#" className="social-nav__link">
                         <BsWhatsapp className="social-nav_icon" />
-                     </a>
-                     <a href="#" className="social-nav__link">
+                     </Link>
+                     <Link to="/" href="#" className="social-nav__link">
                         <BsTelegram className="social-nav_icon" />
-                     </a>
+                     </Link>
                   </div>
 
                   <div className="address-phone">
@@ -88,9 +89,26 @@ export default function Header() {
                      </NavLink>
                   </li>
                   <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
-                        دسته بندی ها
-                     </NavLink>
+                     <button to="/" className="menu-rightSide__select">
+                        <IoMdArrowDropdown className="menu-rightSide__select--icon"></IoMdArrowDropdown> دسته بندی ها
+                        <div className="menu-rightSide__options">
+                           <Link to="/rahati">
+                              <option value="راحتی" className="menu-rightSide__option">
+                                 راحتی
+                              </option>
+                           </Link>
+                           <Link to="/saltanati">
+                              <option value="سلطنتی" className="menu-rightSide__option">
+                                 سلطنتی
+                              </option>
+                           </Link>
+                           <Link to="/classic">
+                              <option value="کلاسیک" className="menu-rightSide__option">
+                                 کلاسیک
+                              </option>
+                           </Link>
+                        </div>
+                     </button>
                   </li>
                   <li className="menu-rightSide__items">
                      <NavLink to="/allproducts" className="menu-rightSide__link">

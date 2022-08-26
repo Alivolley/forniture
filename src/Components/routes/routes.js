@@ -7,6 +7,9 @@ import ProductEdit from "../Dashboard/prodocts/ProductEdit";
 import ProductDelete from "../Dashboard/prodocts/ProductDelete";
 import ProductAdd from "../Dashboard/prodocts/ProductAdd";
 import AllProducts from "../AllProducts/AllProducts";
+import Classic from "../Categories/Classic";
+import Rahati from "../Categories/Rahati";
+import Saltanati from "../Categories/Saltanati";
 
 export let routes = [
    { path: "/", element: <Home></Home> },
@@ -14,6 +17,9 @@ export let routes = [
    { path: "/dashboard", element: <Dashboard></Dashboard> },
    { path: "/error", element: <ErrorPage></ErrorPage> },
    { path: "/allproducts", element: <AllProducts></AllProducts> },
+   { path: "/classic", element: <Classic></Classic> },
+   { path: "/rahati", element: <Rahati></Rahati> },
+   { path: "/saltanati", element: <Saltanati></Saltanati> },
    { path: "/dashboard-productlist", element: <ProductList></ProductList> },
    { path: "/dashboard-productadd", element: <ProductAdd></ProductAdd> },
    { path: "/dashboard-productedit", element: <ProductEdit></ProductEdit> },
