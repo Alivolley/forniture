@@ -6,8 +6,6 @@ export default function SidebarDashboard() {
    return (
       <div className="dashboard-side">
          <ul className="dashboard-sidebar__list">
-            {/* want to add dashboard-sidebar__items--active */}
-
             <NavLink to="/dashboard" className="dashboard-sidebar__items">
                مدیر سایت
             </NavLink>

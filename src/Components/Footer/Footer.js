@@ -9,7 +9,7 @@ export default function Footer() {
    return (
       <>
          <div className="footer">
-            <div class="containers">
+            <div className="containers">
                <div className="footer-main">
                   <ul className="footer-fast-access">
                      <Link to="/" className="footer-fast-access__item">
@@ -46,7 +46,7 @@ export default function Footer() {
                      </ul>
                   </div>
                </div>
-               <div class="footer-copy-right">© 2020. All rights reserved.</div>
+               <div className="footer-copy-right">© 2020. All rights reserved.</div>
             </div>
          </div>
       </>

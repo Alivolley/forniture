@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./OurNewProducts.css";
+import RealCard from "../RealCard/RealCard";
 
 export default function OurNewProducts() {
    const [newestProduct, setNewestProduct] = useState([]);
@@ -22,16 +23,14 @@ export default function OurNewProducts() {
                {newestProduct.map((product, index) => {
                   if (index < 3) {
                      return (
-                        <div key={product[0]} className="product-list col-12 col-md-6 col-xl-4">
-                           <div className="product-list-cart">
-                              <img src={product[1].pictures} alt="" className="product-list-img" />
-                              <h2 className="product-list-title">{product[1].name}</h2>
-                              <p className="product-list-type">از دسته : {product[1].Category}</p>
-                              <p className="product-list-desc">{product[1].description}</p>
-                              <p className="product-list-price">قیمت : {product[1].price}</p>
-                              <button className="product-list-edit">افزودن به سبد خرید</button>
-                           </div>
-                        </div>
+                        <RealCard
+                           keyName={product[0]}
+                           pictures={product[1].pictures}
+                           name={product[1].name}
+                           Category={product[1].Category}
+                           description={product[1].description}
+                           price={product[1].price}
+                        ></RealCard>
                      );
                   }
                })}

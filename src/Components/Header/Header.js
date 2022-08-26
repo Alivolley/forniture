@@ -73,29 +73,34 @@ export default function Header() {
                </ul>
                <ul className="menu-rightSide">
                   <li className="menu-rightSide__items">
-                     <Link to="/" className="menu-rightSide__link">
+                     <NavLink
+                        to="/"
+                        className={(some) => {
+                           return some.isActive ? "menu-rightSide__link active" : "menu-rightSide__link";
+                        }}
+                     >
                         درباره ما
-                     </Link>
+                     </NavLink>
                   </li>
                   <li className="menu-rightSide__items">
-                     <Link to="/" className="menu-rightSide__link">
+                     <NavLink to="/" className="menu-rightSide__link">
                         تماس با ما
-                     </Link>
+                     </NavLink>
                   </li>
                   <li className="menu-rightSide__items">
-                     <Link to="/" className="menu-rightSide__link">
+                     <NavLink to="/" className="menu-rightSide__link">
                         دسته بندی ها
-                     </Link>
+                     </NavLink>
                   </li>
                   <li className="menu-rightSide__items">
-                     <Link to="/" className="menu-rightSide__link">
+                     <NavLink to="/allproducts" className="menu-rightSide__link">
                         محصولات
-                     </Link>
+                     </NavLink>
                   </li>
                   <li className="menu-rightSide__items">
-                     <Link to="/" className="menu-rightSide__link">
+                     <NavLink to="/" className="menu-rightSide__link">
                         صفحه اصلی
-                     </Link>
+                     </NavLink>
                   </li>
                   <img className="menu-logo" src="pics/logoBig.png" alt="" />
                </ul>

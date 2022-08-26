@@ -134,3 +134,8 @@
    border-radius: 5px;
    font-size: 26px;
 }
+
+.menu-rightSide__items .active {
+   border-bottom: 3px solid var(--primary);
+   border-radius: 5px;
+}

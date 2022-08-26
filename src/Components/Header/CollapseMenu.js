@@ -19,7 +19,7 @@ export default function CollapseMenu(props) {
                </NavLink>
             </li>
             <li className="hamber-menu__items">
-               <NavLink to="/" className="hamber-menu__link">
+               <NavLink to="/allproducts" className="hamber-menu__link">
                   محصولات
                </NavLink>
             </li>

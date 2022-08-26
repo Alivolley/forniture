@@ -21,3 +21,9 @@
    text-align: center;
    font-family: "vazir";
 }
+
+.product-newest-link {
+   text-decoration: none;
+   text-align: center;
+   max-width: 200px;
+}
