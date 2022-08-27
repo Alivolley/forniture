@@ -1,0 +1,49 @@
+.chosen-card {
+   border: 2px solid var(--primary);
+   padding-top: 20px;
+}
+
+.chosen-card__img {
+}
+
+.chosen-card__describe {
+   direction: rtl;
+   font-family: "vazir";
+}
+
+.chosen-card__name {
+   color: var(--primary);
+   text-align: center;
+   font-weight: 600;
+}
+
+.chosen-card__cate {
+   margin: 35px 0;
+}
+
+.chosen-card__explain {
+}
+
+.chosen-card-price {
+   color: var(--primary);
+   margin: 35px 0;
+}
+
+.chosen-card__add-basket {
+   font-family: "vazir";
+   display: block;
+   margin: 0 auto;
+   color: var(--icon-color);
+   border: 2px solid var(--primary);
+   background-color: var(--secondary);
+   padding: 15px;
+   border-radius: 25px;
+   font-size: 14px;
+   transition: all 0.2s;
+   cursor: pointer;
+}
+
+.chosen-card__add-basket:hover {
+   color: var(--primary);
+   background-color: transparent;
+}

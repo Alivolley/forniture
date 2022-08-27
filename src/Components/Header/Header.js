@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { AiOutlineInstagram, AiOutlineShoppingCart } from "react-icons/ai";
 import { CgMenuMotion } from "react-icons/cg";
@@ -11,12 +11,25 @@ import CollapseMenu from "./CollapseMenu";
 
 export default function Header() {
    const [show, setShow] = useState(false);
+   const [basketCount, setBasketCount] = useState([]);
+
    const openTheMenu = () => {
       setShow(true);
    };
    const closeMenu = () => {
       setShow(false);
    };
+
+   useEffect(() => {
+      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/basket.json")
+         .then((res) => res.json())
+         .then((data) => {
+            setBasketCount(Object.entries(data));
+         })
+         .catch((data) => {
+            setBasketCount([]);
+         });
+   }, []);
 
    return (
       <>
@@ -61,6 +74,7 @@ export default function Header() {
                      <Link to="/">
                         <button className="menu-leftSide__btn">
                            <AiOutlineShoppingCart className="menu-leftSide__icon" />
+                           {basketCount.length}
                         </button>
                      </Link>
                   </li>
@@ -75,16 +89,11 @@ export default function Header() {
                <ul className="menu-rightSide">
                   <li className="menu-rightSide__items">
                      <NavLink
-                        to="/"
+                        to="/aboute-us"
                         className={(some) => {
                            return some.isActive ? "menu-rightSide__link active" : "menu-rightSide__link";
                         }}
                      >
-                        درباره ما
-                     </NavLink>
-                  </li>
-                  <li className="menu-rightSide__items">
-                     <NavLink to="/" className="menu-rightSide__link">
                         تماس با ما
                      </NavLink>
                   </li>

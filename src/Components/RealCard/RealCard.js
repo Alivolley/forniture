@@ -12,7 +12,7 @@ export default function RealCard(props) {
                <p className="product-list-type">از دسته : {props.Category}</p>
                <p className="product-list-desc">{props.description}</p>
                <p className="product-list-price">قیمت : {props.price}</p>
-               <Link to="/" className="product-list-edit product-newest-link">
+               <Link to={`/product/${props.keyName}`} className="product-list-edit product-newest-link">
                   مشاهده جزییات
                </Link>
             </div>

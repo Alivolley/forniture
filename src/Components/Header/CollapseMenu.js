@@ -53,13 +53,8 @@ export default function CollapseMenu(props) {
                </button>
             </li>
             <li className="hamber-menu__items">
-               <NavLink to="/" className="hamber-menu__link">
+               <NavLink to="/contact-us" className="hamber-menu__link">
                   تماس با ما
-               </NavLink>
-            </li>
-            <li className="hamber-menu__items">
-               <NavLink to="/" className="hamber-menu__link">
-                  درباره ما
                </NavLink>
             </li>
          </ul>

@@ -81,6 +81,7 @@
    border-radius: 5px;
    cursor: pointer;
    transition: all 0.2s;
+   font-family: "vazir";
 }
 
 .menu-leftSide__icon {
@@ -91,6 +92,7 @@
 
 .menu-leftSide__btn:hover {
    background-color: var(--primary);
+   color: var(--icon-color);
 }
 
 .menu-leftSide__btn:hover .menu-leftSide__icon {
