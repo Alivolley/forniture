@@ -16,10 +16,10 @@ export default function Slides() {
             clickable: true,
             dynamicBullets: true,
          }}
-         // autoplay={{
-         //    delay: 3000,
-         //    disableOnInteraction: false,
-         // }}
+         autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+         }}
          navigation={true}
          modules={[Navigation, Pagination, Autoplay]}
       >

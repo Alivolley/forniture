@@ -82,7 +82,7 @@ export default function ProductAdd() {
             <div className="add-product ">
                {doneModal && (
                   <div className="add-product__modal">
-                     <p>محصول جدید با موفقیت اضافه شد. 😊</p>
+                     <p>محصول جدید با موفقیت اضافه شد.</p>
                      <AiOutlineCloseCircle className="add-product__modal--icon" onClick={() => setDoneModal(false)}></AiOutlineCloseCircle>
                   </div>
                )}
@@ -98,7 +98,7 @@ export default function ProductAdd() {
                         onChange={putPictureValue}
                         value={pictureValue}
                      >
-                        <option value="لطفا یک عکس انتخاب کنید ..." className="add-product-picture__items" disabled>
+                        <option value="لطفا یک عکس انتخاب کنید ..." className="add-product-picture__items">
                            لطفا یک عکس انتخاب کنید ...
                         </option>
 
@@ -122,7 +122,7 @@ export default function ProductAdd() {
                         onChange={putCategoryValue}
                         value={categoryValue}
                      >
-                        <option value="دسته بندی" className="add-product-Category__items" disabled>
+                        <option value="دسته بندی" className="add-product-Category__items">
                            دسته بندی
                         </option>
                         {Categories.map((Category) => {

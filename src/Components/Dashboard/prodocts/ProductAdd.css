@@ -115,3 +115,8 @@
    font-size: 25px;
    cursor: pointer;
 }
+
+.add-product__modal--icon:hover {
+   background-color: #ac252e;
+   border-radius: 50%;
+}

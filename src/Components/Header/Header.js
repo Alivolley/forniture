@@ -6,12 +6,15 @@ import { FaTwitter, FaUserAlt } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BsWhatsapp, BsTelegram, BsFillTelephoneFill, BsSearch } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import CollapseMenu from "./CollapseMenu";
 
 export default function Header() {
    const [show, setShow] = useState(false);
    const [basketCount, setBasketCount] = useState([]);
+   const [searchBar, setSearchBar] = useState(false);
+   const [searchValue, setSearchValue] = useState("");
+   let naver = useNavigate();
 
    const openTheMenu = () => {
       setShow(true);
@@ -30,6 +33,12 @@ export default function Header() {
             setBasketCount([]);
          });
    }, []);
+
+   const searchHandler = () => {
+      if (searchValue.trim()) {
+         naver(`/searched/${searchValue}`);
+      }
+   };
 
    return (
       <>
@@ -63,15 +72,36 @@ export default function Header() {
                   </div>
                </section>
             </div>
+
             <section className="menu containers">
                <ul className="menu-leftSide">
                   <li className="menu-leftSide__items">
-                     <button className="menu-leftSide__btn">
+                     <button className="menu-leftSide__btn" onClick={() => setSearchBar((prev) => (prev = !prev))}>
                         <BsSearch className="menu-leftSide__icon" />
                      </button>
+
+                     <form
+                        action=""
+                        className={`menu-leftSide__form ${searchBar ? "menu-leftSide__form--active" : null}`}
+                        onSubmit={(event) => {
+                           event.preventDefault();
+                           searchHandler();
+                        }}
+                     >
+                        <input
+                           placeholder="لطفا نام مبل را وارد کنید ..."
+                           type="text"
+                           className="menu-leftSide__serach-input"
+                           onChange={(event) => setSearchValue(event.target.value)}
+                           value={searchValue}
+                        />
+                        <span className="menu-leftSide__submite-btn" onClick={() => searchHandler()}>
+                           بگرد
+                        </span>
+                     </form>
                   </li>
                   <li className="menu-leftSide__items">
-                     <Link to="/">
+                     <Link to="/basket">
                         <button className="menu-leftSide__btn">
                            <AiOutlineShoppingCart className="menu-leftSide__icon" />
                            {basketCount.length}
@@ -86,10 +116,11 @@ export default function Header() {
                      </Link>
                   </li>
                </ul>
+
                <ul className="menu-rightSide">
                   <li className="menu-rightSide__items">
                      <NavLink
-                        to="/aboute-us"
+                        to="/contact-us"
                         className={(some) => {
                            return some.isActive ? "menu-rightSide__link active" : "menu-rightSide__link";
                         }}

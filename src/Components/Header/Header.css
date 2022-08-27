@@ -72,6 +72,7 @@
 .menu-leftSide__items {
    width: 35px;
    height: 35px;
+   position: relative !important;
 }
 
 .menu-leftSide__btn {
@@ -163,9 +164,10 @@
    left: 0;
    background-color: var(--icon-color);
    text-align: end;
-   border: 1px solid var(--primary);
+   /* border: 1px solid var(--primary); */
    border-radius: 5px;
    display: none;
+   box-shadow: 0px 0px 15px 1px var(--primary);
 }
 
 .menu-rightSide__option {
@@ -184,4 +186,54 @@
 
 .menu-rightSide__select:hover .menu-rightSide__select--icon {
    transform: rotate(-180deg);
+}
+
+.menu-leftSide__form {
+   position: absolute;
+   bottom: -40px;
+   left: 0;
+   z-index: 999;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: center;
+   align-items: center;
+   transition: all 0.2s;
+   transform-origin: top left;
+   transform: scale(0);
+}
+
+.menu-leftSide__form--active {
+   transform: scale(1);
+}
+
+.menu-leftSide__serach-input {
+   border: 1px solid var(--primary);
+   border-top-right-radius: 15px;
+   border-bottom-right-radius: 15px;
+   padding: 8px 10px;
+   background-color: var(--icon-color);
+   font-family: "vazir";
+   color: var(--primary);
+   direction: rtl;
+}
+
+.menu-leftSide__serach-input:focus {
+   outline: none;
+}
+
+.menu-leftSide__submite-btn {
+   border-top-left-radius: 15px;
+   border-bottom-left-radius: 15px;
+   background-color: var(--primary);
+   color: var(--icon-color);
+   border: 1px solid var(--primary);
+   padding: 6px 5px;
+   cursor: pointer;
+   font-family: "vazir";
+   transition: all 0.2s;
+}
+
+.menu-leftSide__submite-btn:hover {
+   background-color: var(--icon-color);
+   color: var(--primary);
 }

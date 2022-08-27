@@ -3,10 +3,12 @@ import "./ChosenCard.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useParams } from "react-router-dom";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function ChosenCard() {
    const [chosenProduct, setChosenProduct] = useState([]);
    const [showChosen, setShowChosen] = useState(false);
+   const [addBasketDone, setAddBasketDone] = useState(false);
 
    let params = useParams();
 
@@ -21,14 +23,22 @@ export default function ChosenCard() {
    }, []);
 
    const addToBasket = () => {
-      let basketProduct = {
-         id: chosenProduct[0],
-      };
+      let basketProduct = chosenProduct[1];
       fetch("https://forniture-82baf-default-rtdb.firebaseio.com/basket.json", {
          method: "POST",
          body: JSON.stringify(basketProduct),
-      }).then((res) => console.log(res));
+      }).then((res) => {
+         if (res.status === 200) {
+            setAddBasketDone(true);
+         }
+      });
    };
+
+   if (addBasketDone) {
+      setTimeout(() => {
+         setAddBasketDone(false);
+      }, 3000);
+   }
 
    return (
       <>
@@ -52,6 +62,12 @@ export default function ChosenCard() {
                      </button>
                   </div>
                </div>
+            </div>
+         )}
+         {addBasketDone && (
+            <div className="edit-product__modal">
+               <p>با موفقیت به سبد خرید اضافه شد.</p>
+               <AiOutlineCloseCircle className="edit-product__modal--icon" onClick={() => setAddBasketDone(false)}></AiOutlineCloseCircle>
             </div>
          )}
          <Footer></Footer>

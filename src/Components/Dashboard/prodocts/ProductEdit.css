@@ -116,10 +116,16 @@
    padding: 10px;
    opacity: 0.976;
    font-family: "vazir";
+   direction: rtl;
 }
 
 .edit-product__modal--icon {
    color: red;
    font-size: 25px;
    cursor: pointer;
+}
+
+.edit-product__modal--icon:hover {
+   background-color: #ac252e;
+   border-radius: 50%;
 }

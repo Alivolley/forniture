@@ -12,6 +12,8 @@ import Rahati from "../Categories/Rahati";
 import Saltanati from "../Categories/Saltanati";
 import Contact from "../Contact/Contact";
 import ChosenCard from "../ChosenCard/ChosenCard";
+import Basket from "../Basket/Basket";
+import Searched from "../Searched/Searched";
 
 export let routes = [
    { path: "/", element: <Home></Home> },
@@ -23,7 +25,9 @@ export let routes = [
    { path: "/rahati", element: <Rahati></Rahati> },
    { path: "/saltanati", element: <Saltanati></Saltanati> },
    { path: "/contact-us", element: <Contact></Contact> },
+   { path: "/basket", element: <Basket></Basket> },
    { path: "/product/:id", element: <ChosenCard></ChosenCard> },
+   { path: "/searched/:id", element: <Searched></Searched> },
    { path: "/dashboard-productlist", element: <ProductList></ProductList> },
    { path: "/dashboard-productadd", element: <ProductAdd></ProductAdd> },
    { path: "/dashboard-productedit", element: <ProductEdit></ProductEdit> },

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./AllProducts.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
 import RealCard from "../RealCard/RealCard";
 
 export default function AllProducts() {
@@ -15,6 +14,7 @@ export default function AllProducts() {
             setNewestProduct(Object.entries(data));
          });
    }, []);
+
    return (
       <>
          <Header></Header>
