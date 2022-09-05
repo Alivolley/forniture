@@ -24,10 +24,10 @@ export default function Slides() {
          modules={[Navigation, Pagination, Autoplay]}
       >
          <SwiperSlide className="header-slide">
-            <img src="pics/first.jpg" alt="" className="header-slide__img" />
+            <img src="/pics/first.jpg" alt="" className="header-slide__img" />
          </SwiperSlide>
          <SwiperSlide className="header-slide">
-            <img src="pics/seconds.jpg" alt="" className="header-slide__img" />
+            <img src="/pics/seconds.jpg" alt="" className="header-slide__img" />
          </SwiperSlide>
       </Swiper>
    );

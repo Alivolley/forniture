@@ -160,7 +160,7 @@ export default function Header() {
                         صفحه اصلی
                      </NavLink>
                   </li>
-                  <img className="menu-logo" src="pics/logoBig.png" alt="" />
+                  <img className="menu-logo" src="/pics/logoBig.png" alt="" />
                </ul>
                <button className="menu-opener" onClick={openTheMenu}>
                   <CgMenuMotion />

@@ -13,7 +13,7 @@ export default function CollapseMenu(props) {
 
    return (
       <section className={`hamber-menu ${props.showState ? "hamber-menu__open" : null}`}>
-         <img className="hamber-menu-logo" src="pics/logo.png" alt="" />
+         <img className="hamber-menu-logo" src="/pics/logo.png" alt="" />
          <RiDeleteBack2Fill className="hember-menu-closer" onClick={closeMenu}></RiDeleteBack2Fill>
          <ul className="hember-menu__list">
             <li className="hamber-menu__items">
