@@ -56,7 +56,7 @@ export default function ChosenCard() {
                         درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی،
                         و فرهنگ پیشرو در
                      </p>
-                     <p className="chosen-card-price">قیمت : {chosenProduct[1].price}</p>
+                     <p className="chosen-card-price">قیمت : {Number(chosenProduct[1].price).toLocaleString()}</p>
                      <button className="chosen-card__add-basket" onClick={() => addToBasket()}>
                         افزودن به سبد خرید
                      </button>

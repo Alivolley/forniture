@@ -31,7 +31,7 @@ export default function Saltanati() {
                            name={product[1].name}
                            Category={product[1].Category}
                            description={product[1].description}
-                           price={product[1].price}
+                           price={Number(product[1].price).toLocaleString()}
                         ></RealCard>
                      );
                   } else {
