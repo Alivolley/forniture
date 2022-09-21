@@ -23,7 +23,7 @@ export default function ProductEdit() {
    ];
 
    useEffect(() => {
-      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/products.json")
+      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setGottenProduct(Object.entries(data));
@@ -31,7 +31,7 @@ export default function ProductEdit() {
    }, []);
 
    useEffect(() => {
-      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/products.json")
+      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setGottenProduct(Object.entries(data));
@@ -49,7 +49,7 @@ export default function ProductEdit() {
    };
 
    const updateProduct = () => {
-      fetch(`https://forniture-82baf-default-rtdb.firebaseio.com/products/${idValue}.json`, {
+      fetch(`https://newfurniture-5d536-default-rtdb.firebaseio.com/products/${idValue}.json`, {
          method: "PUT",
          body: JSON.stringify({
             pictures: picturesValue,

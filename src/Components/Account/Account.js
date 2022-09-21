@@ -20,7 +20,7 @@ export default function Account() {
       event.preventDefault();
 
       if (userName && password && email) {
-         fetch("https://forniture-82baf-default-rtdb.firebaseio.com/users.json")
+         fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/users.json")
             .then((res) => res.json())
             .then((data) => {
                let gotedData = Object.entries(data);

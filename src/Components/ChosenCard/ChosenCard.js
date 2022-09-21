@@ -13,7 +13,7 @@ export default function ChosenCard() {
    let params = useParams();
 
    useEffect(() => {
-      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/products.json")
+      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             let some = Object.entries(data);
@@ -24,7 +24,7 @@ export default function ChosenCard() {
 
    const addToBasket = () => {
       let basketProduct = chosenProduct[1];
-      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/basket.json", {
+      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/basket.json", {
          method: "POST",
          body: JSON.stringify(basketProduct),
       }).then((res) => {

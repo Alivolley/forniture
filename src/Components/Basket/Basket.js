@@ -12,7 +12,7 @@ export default function Basket() {
    const [removeComplete, setRemoveComplete] = useState(false);
 
    useEffect(() => {
-      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/basket.json")
+      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/basket.json")
          .then((res) => res.json())
          .then((data) => {
             setBasketProduct(Object.entries(data));
@@ -22,7 +22,7 @@ export default function Basket() {
    }, []);
 
    useEffect(() => {
-      fetch("https://forniture-82baf-default-rtdb.firebaseio.com/basket.json")
+      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/basket.json")
          .then((res) => res.json())
          .then((data) => {
             if (data) {
@@ -36,7 +36,7 @@ export default function Basket() {
    }, [reload]);
 
    const removeFromBasket = (productId) => {
-      fetch(`https://forniture-82baf-default-rtdb.firebaseio.com/basket/${productId}.json`, {
+      fetch(`https://newfurniture-5d536-default-rtdb.firebaseio.com/basket/${productId}.json`, {
          method: "DELETE",
       }).then((res) => {
          if (res.status === 200) {
