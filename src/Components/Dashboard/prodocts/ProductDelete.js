@@ -10,7 +10,7 @@ export default function ProductDelete() {
    const [deleteComplete, setDeleteComplete] = useState(false);
 
    useEffect(() => {
-      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/products.json")
+      fetch("https://againfornture-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setGottenProduct(Object.entries(data));
@@ -18,7 +18,7 @@ export default function ProductDelete() {
    }, []);
 
    useEffect(() => {
-      fetch("https://newfurniture-5d536-default-rtdb.firebaseio.com/products.json")
+      fetch("https://againfornture-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setGottenProduct(Object.entries(data));
@@ -31,7 +31,7 @@ export default function ProductDelete() {
    };
 
    const deleteProduct = () => {
-      fetch(`https://newfurniture-5d536-default-rtdb.firebaseio.com/products/${productId}.json`, {
+      fetch(`https://againfornture-default-rtdb.firebaseio.com/products/${productId}.json`, {
          method: "DELETE",
       }).then((res) => {
          setSureQues(false);
