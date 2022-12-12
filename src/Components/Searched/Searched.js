@@ -10,7 +10,7 @@ export default function Searched() {
    let params = useParams();
 
    useEffect(() => {
-      fetch("https://againfornture-default-rtdb.firebaseio.com/products.json")
+      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setNewestProduct(Object.entries(data));

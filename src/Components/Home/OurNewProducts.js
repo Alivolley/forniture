@@ -7,7 +7,7 @@ export default function OurNewProducts() {
    const [newestProduct, setNewestProduct] = useState([]);
 
    useEffect(() => {
-      fetch("https://againfornture-default-rtdb.firebaseio.com/products.json")
+      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setNewestProduct(Object.entries(data));

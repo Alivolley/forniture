@@ -6,7 +6,7 @@ export default function Productlist() {
    const [gottenProduct, setGottenProduct] = useState([]);
 
    useEffect(() => {
-      fetch("https://againfornture-default-rtdb.firebaseio.com/products.json")
+      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
          .then((res) => res.json())
          .then((data) => {
             setGottenProduct(Object.entries(data));

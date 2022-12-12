@@ -24,7 +24,7 @@ export default function Header() {
    };
 
    useEffect(() => {
-      fetch("https://againfornture-default-rtdb.firebaseio.com/basket.json")
+      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/basket.json")
          .then((res) => res.json())
          .then((data) => {
             setBasketCount(Object.entries(data));

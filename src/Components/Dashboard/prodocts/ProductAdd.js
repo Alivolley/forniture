@@ -53,7 +53,7 @@ export default function ProductAdd() {
             price: priceValue,
          };
 
-         fetch("https://againfornture-default-rtdb.firebaseio.com/products.json", {
+         fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json", {
             method: "POST",
             body: JSON.stringify(newProduct),
          }).then((res) => {
