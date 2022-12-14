@@ -64,7 +64,7 @@ export default function Basket() {
                         <img className="basket-img col-12 col-md-6" src={product[1].pictures} alt="" />
                         <div className="col-12 col-md-6">
                            <p className="basket-title">مدل : {product[1].name}</p>
-                           <p className="basket-price">قیمت : {Number(product[1].price).toLocaleString()} تومان</p>
+                           <p className="basket-price">قیمت : {Number(product[1].price).toLocaleString("fa-IR")} تومان</p>
                            <button className="basket_remove" onClick={() => removeFromBasket(product[0])}>
                               حذف از سبد
                            </button>

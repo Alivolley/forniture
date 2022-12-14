@@ -26,7 +26,7 @@ export default function Productlist() {
                            <h2 className="product-list-title">{product[1].name}</h2>
                            <p className="product-list-type">از دسته : {product[1].Category}</p>
                            <p className="product-list-desc">{product[1].description}</p>
-                           <p className="product-list-price">قیمت : {Number(product[1].price).toLocaleString()}</p>
+                           <p className="product-list-price">قیمت : {Number(product[1].price).toLocaleString("fa-IR")}</p>
                         </div>
                      </div>
                   );

@@ -31,7 +31,7 @@ export default function AllProducts() {
                         name={product[1].name}
                         Category={product[1].Category}
                         description={product[1].description}
-                        price={Number(product[1].price).toLocaleString()}
+                        price={Number(product[1].price).toLocaleString("fa-IR")}
                      ></RealCard>
                   );
                })}
