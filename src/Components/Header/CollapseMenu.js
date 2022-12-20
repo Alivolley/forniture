@@ -31,19 +31,19 @@ export default function CollapseMenu(props) {
                   <IoMdArrowDropdown className="hamber-menu__select--icon"></IoMdArrowDropdown> دسته بندی ها
                   {showCat && (
                      <div className="hamber-menu__options">
-                        <Link to="/rahati">
+                        <Link to="/category/1">
                            <option value="راحتی" className="hamber-menu__option">
                               راحتی
                            </option>
                         </Link>
                         <hr />
-                        <Link to="/saltanati">
+                        <Link to="/category/2">
                            <option value="سلطنتی" className="hamber-menu__option">
                               سلطنتی
                            </option>
                         </Link>
                         <hr />
-                        <Link to="/classic">
+                        <Link to="/category/3">
                            <option value="کلاسیک" className="hamber-menu__option">
                               کلاسیک
                            </option>

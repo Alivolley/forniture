@@ -37,3 +37,7 @@ a {
    text-align: center;
    font-size: 1.3rem;
 }
+
+pre {
+   font-family: "vazir" !important;
+}

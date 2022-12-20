@@ -71,6 +71,10 @@
    max-width: 500px;
 }
 
+.add-product-desc {
+   resize: none;
+}
+
 .add-product-submit {
    background-color: var(--submit-bg);
    margin-top: 30px;

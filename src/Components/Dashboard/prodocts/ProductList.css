@@ -31,6 +31,11 @@
 
 .product-list-desc {
    margin-bottom: 15px;
+   height: 5rem;
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
 }
 
 .product-list-price {

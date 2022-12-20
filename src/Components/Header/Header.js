@@ -14,7 +14,7 @@ export default function Header() {
    const [basketCount, setBasketCount] = useState([]);
    const [searchBar, setSearchBar] = useState(false);
    const [searchValue, setSearchValue] = useState("");
-   let naver = useNavigate();
+   let navigate = useNavigate();
 
    const openTheMenu = () => {
       setShow(true);
@@ -36,7 +36,7 @@ export default function Header() {
 
    const searchHandler = () => {
       if (searchValue.trim()) {
-         naver(`/searched/${searchValue}`);
+         navigate(`/searched/${searchValue}`);
       }
    };
 

@@ -129,7 +129,16 @@ export default function ProductAdd() {
                   </div>
                   <div className="add-product-desc__wrapper">
                      <label htmlFor="add-product-desc">توضیحات :</label>
-                     <input id="add-product-desc" type="text" className="add-product-desc" placeholder="..." onChange={putDescValue} value={descValue} />
+                     <textarea
+                        id="add-product-desc"
+                        className="add-product-desc"
+                        placeholder="..."
+                        onChange={putDescValue}
+                        value={descValue}
+                        cols="30"
+                        rows="10"
+                     ></textarea>
+                     {/* <input id="add-product-desc" type="text" className="add-product-desc" placeholder="..." onChange={putDescValue} value={descValue} /> */}
                   </div>
                   <div className="add-product-price__wrapper">
                      <label htmlFor="add-product-price">قیمت :</label>
