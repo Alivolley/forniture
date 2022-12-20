@@ -25,3 +25,15 @@
 a {
    text-decoration: none !important;
 }
+
+.spinner-custom {
+   margin: 0 auto !important;
+}
+
+.alert {
+   font-family: "vazir-bold";
+   direction: rtl;
+   margin-top: 2rem !important;
+   text-align: center;
+   font-size: 1.3rem;
+}

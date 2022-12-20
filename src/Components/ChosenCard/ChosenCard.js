@@ -4,33 +4,28 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useParams } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import axiosInstance from "../../Utils/axios";
+import { Spinner } from "react-bootstrap";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation, Pagination } from "swiper";
 
 export default function ChosenCard() {
-   const [chosenProduct, setChosenProduct] = useState([]);
-   const [showChosen, setShowChosen] = useState(false);
+   const [chosenProduct, setChosenProduct] = useState();
    const [addBasketDone, setAddBasketDone] = useState(false);
 
    let params = useParams();
 
    useEffect(() => {
-      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
-         .then((res) => res.json())
-         .then((data) => {
-            let some = Object.entries(data);
-            setChosenProduct(some.find((product) => product[0] === params.id));
-            setShowChosen(true);
-         });
+      axiosInstance.get(`product/${params.id}/`).then((res) => setChosenProduct(res.data));
    }, []);
 
    const addToBasket = () => {
-      let basketProduct = chosenProduct[1];
-      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/basket.json", {
-         method: "POST",
-         body: JSON.stringify(basketProduct),
-      }).then((res) => {
-         if (res.status === 200) {
-            setAddBasketDone(true);
-         }
+      axiosInstance.post(`basket/${chosenProduct.id}/`).then((res) => {
+         console.log(res);
+         //       setAddBasketDone(true);
       });
    };
 
@@ -40,29 +35,43 @@ export default function ChosenCard() {
       }, 3000);
    }
 
+   console.log(chosenProduct);
+
    return (
       <>
          <Header></Header>
-         {showChosen && (
+         {chosenProduct ? (
             <div className="containers">
                <div className="chosen-card row">
-                  <img src={chosenProduct[1].pictures} alt="" className="chosen-card__img col-12 col-xl-6" />
+                  <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination]} className="mySwiper col-12 col-xl-6">
+                     {chosenProduct.pictures.map((image) => (
+                        <SwiperSlide>
+                           <img src={`https://furniture.pythonanywhere.com${image.picture}`} alt="" className="chosen-card__img" />
+                        </SwiperSlide>
+                     ))}
+                  </Swiper>
                   <div className="chosen-card__describe col-12 col-xl-6">
-                     <p className="chosen-card__name">مدل : {chosenProduct[1].name}</p>
-                     <p className="chosen-card__cate">این مبل از نوع {chosenProduct[1].Category} میباشد .</p>
+                     <p className="chosen-card__name">مدل : {chosenProduct.name}</p>
+                     <p className="chosen-card__cate">
+                        این مبل از نوع {chosenProduct.category === 1 && "راحتی"}
+                        {chosenProduct.category === 2 && "سلطنتی"}
+                        {chosenProduct.category === 3 && "کلاسیک"} میباشد .
+                     </p>
                      <p className="chosen-card__explain">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
                         سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
                         درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی،
                         و فرهنگ پیشرو در
                      </p>
-                     <p className="chosen-card-price">قیمت : {Number(chosenProduct[1].price).toLocaleString("fa-IR")}</p>
+                     <p className="chosen-card-price">قیمت : {Number(chosenProduct.price).toLocaleString("fa-IR")}</p>
                      <button className="chosen-card__add-basket" onClick={() => addToBasket()}>
                         افزودن به سبد خرید
                      </button>
                   </div>
                </div>
             </div>
+         ) : (
+            <Spinner animation="border" className="spinner-custom" />
          )}
          {addBasketDone && (
             <div className="edit-product__modal">

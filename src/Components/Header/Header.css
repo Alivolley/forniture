@@ -46,6 +46,7 @@
 .address-text,
 .phone-text {
    font-family: "vazir";
+   margin-top: 15px;
 }
 
 .address-icon,

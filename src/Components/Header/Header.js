@@ -132,17 +132,17 @@ export default function Header() {
                      <button to="/" className="menu-rightSide__select">
                         <IoMdArrowDropdown className="menu-rightSide__select--icon"></IoMdArrowDropdown> دسته بندی ها
                         <div className="menu-rightSide__options">
-                           <Link to="/rahati">
+                           <Link to="/category/1">
                               <option value="راحتی" className="menu-rightSide__option">
                                  راحتی
                               </option>
                            </Link>
-                           <Link to="/saltanati">
+                           <Link to="/category/2">
                               <option value="سلطنتی" className="menu-rightSide__option">
                                  سلطنتی
                               </option>
                            </Link>
-                           <Link to="/classic">
+                           <Link to="/category/3">
                               <option value="کلاسیک" className="menu-rightSide__option">
                                  کلاسیک
                               </option>

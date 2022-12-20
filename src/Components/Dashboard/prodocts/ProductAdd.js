@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Dashboard from "../Dashbaord";
 import "./ProductAdd.css";
-import pictures from "./productsPictures";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import axiosInstance from "../../../Utils/axios";
 
 export default function ProductAdd() {
    const [pictureValue, setPictureValue] = useState("");
@@ -18,10 +18,6 @@ export default function ProductAdd() {
       { id: 3, item: "کلاسیک" },
    ];
 
-   const putPictureValue = (event) => {
-      setPictureValue(event.target.value);
-   };
-
    const putCategoryValue = (event) => {
       setCategoryValue(event.target.value);
    };
@@ -35,37 +31,60 @@ export default function ProductAdd() {
    };
 
    const putPriceValue = (event) => {
-      setPriceValue(event.target.value);
+      setPriceValue(+event.target.value);
+   };
+
+   const putPictureValue = (event) => {
+      setPictureValue((prev) => [...prev, event.target.files[0]]);
    };
 
    const sendProductData = (event) => {
       event.preventDefault();
       if ((pictureValue, categoryValue, nameValue, descValue, priceValue)) {
-         let srcpicture = pictures.find((item) => {
-            return item.name === pictureValue;
+         // let srcpicture = pictures.find((item) => {
+         //    return item.name === pictureValue;
+         // });
+
+         // let newProduct = {
+         //    pictures: srcpicture.address,
+         //    Category: categoryValue,
+         //    name: nameValue,
+         //    description: descValue,
+         //    price: priceValue,
+         // };
+
+         // console.log(pictureValue);
+
+         let formData = new FormData();
+
+         pictureValue.forEach((file) => {
+            formData.append("files", file);
          });
 
-         let newProduct = {
-            pictures: srcpicture.address,
-            Category: categoryValue,
-            name: nameValue,
-            description: descValue,
-            price: priceValue,
-         };
+         formData.append("category", categoryValue);
+         formData.append("description", descValue);
+         formData.append("name", nameValue);
+         formData.append("price", priceValue);
 
-         fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json", {
-            method: "POST",
-            body: JSON.stringify(newProduct),
-         }).then((res) => {
-            if (res.status === 200) {
-               setDoneModal(true);
-               setPictureValue("");
-               setCategoryValue("");
-               setNameValue("");
-               setDescValue("");
-               setPriceValue("");
-            }
-         });
+         axiosInstance
+            .post(`/product/1/`, formData, {
+               headers: {
+                  "Content-Type": "multipart/form-data",
+               },
+            })
+            .then((res) => {
+               console.log(res);
+               if (res.status === 200) {
+                  setDoneModal(true);
+                  setPictureValue("");
+                  setCategoryValue("");
+                  setNameValue("");
+                  setDescValue("");
+                  setPriceValue("");
+               }
+               res.json();
+            })
+            .catch((err) => console.log(err));
       }
    };
 
@@ -88,46 +107,15 @@ export default function ProductAdd() {
                )}
 
                <form action="" className="add-product-form" onSubmit={sendProductData}>
-                  <div className="add-product-picture__wrapper">
-                     <label htmlFor="add-product-picture">عکس خود را انتخاب کنید :</label>
-                     <select
-                        defaultValue="لطفا یک عکس انتخاب کنید ..."
-                        name=""
-                        id="add-product-picture"
-                        className="add-product-picture"
-                        onChange={putPictureValue}
-                        value={pictureValue}
-                     >
-                        <option value="لطفا یک عکس انتخاب کنید ..." className="add-product-picture__items">
-                           لطفا یک عکس انتخاب کنید ...
-                        </option>
-
-                        {pictures.map((pic) => {
-                           return (
-                              <option key={pic.id} value={pic.name} className="add-product-picture__items">
-                                 {pic.name}
-                              </option>
-                           );
-                        })}
-                     </select>
-                  </div>
-
                   <div className="add-product-Category__wrapper">
                      <label htmlFor="add-product-Category">دسته بندی :</label>
-                     <select
-                        defaultValue="دسته بندی"
-                        name=""
-                        id="add-product-Category"
-                        className="add-product-Category"
-                        onChange={putCategoryValue}
-                        value={categoryValue}
-                     >
-                        <option value="دسته بندی" className="add-product-Category__items">
+                     <select id="add-product-Category" className="add-product-Category" onChange={putCategoryValue} value={categoryValue}>
+                        <option className="add-product-Category__items" disabled={categoryValue ? true : false}>
                            دسته بندی
                         </option>
                         {Categories.map((Category) => {
                            return (
-                              <option key={Category.id} value={Category.item} className="add-product-picture__items">
+                              <option key={Category.id} value={Category.id} className="add-product-picture__items">
                                  {Category.item}
                               </option>
                            );
@@ -148,7 +136,21 @@ export default function ProductAdd() {
                      <input id="add-product-price" type="text" className="add-product-price" placeholder="..." onChange={putPriceValue} value={priceValue} />
                   </div>
 
-                  <input type="submit" className="add-product-submit" value="اضافه کردن" />
+                  <div className="add-product-picture__wrapper">
+                     <label htmlFor="add-product-picture">عکس خود را انتخاب کنید :</label>
+
+                     <input type="file" id="add-product-picture" onChange={putPictureValue} />
+                  </div>
+
+                  <div className="add-product-picture__wrapper">
+                     <label htmlFor="add-product-picture">تعدا عکس های انتخاب شده : {pictureValue.length}</label>
+                  </div>
+
+                  <input
+                     type="submit"
+                     className={pictureValue && categoryValue && nameValue && descValue && priceValue ? "add-product-submit" : "add-product-submit__unready"}
+                     value="اضافه کردن"
+                  />
                </form>
             </div>
          </div>

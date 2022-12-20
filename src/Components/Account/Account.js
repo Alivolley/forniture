@@ -1,5 +1,7 @@
+import Cookies from "js-cookie";
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import "./Account.css";
 
@@ -7,8 +9,14 @@ export default function Account() {
    const [userName, setUserName] = useState("");
    const [password, setPassword] = useState("");
    const [email, setEmail] = useState("");
-   const [navigate, setNavigate] = useState("");
    const [errorShow, setErrorShow] = useState(false);
+   const [errorMessege, setErrorMessege] = useState();
+
+   const navigate = useNavigate();
+
+   useEffect(() => {
+      Cookies.get("login") && navigate("/dashboard");
+   }, []);
 
    if (errorShow) {
       setTimeout(() => {
@@ -20,17 +28,15 @@ export default function Account() {
       event.preventDefault();
 
       if (userName && password && email) {
-         fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/users.json")
-            .then((res) => res.json())
-            .then((data) => {
-               let gotedData = Object.entries(data);
-               if (gotedData[0][1].userName === userName && gotedData[0][1].password === password && gotedData[0][1].email === email) {
-                  setNavigate("yes");
-               } else {
-                  setNavigate("not");
-               }
-            });
+         if (userName === "ali" && password === 1234 && email === "ali@gmail.com") {
+            Cookies.set("login", "ok", { expires: 3 });
+            navigate("/dashboard");
+         } else {
+            setErrorMessege("اطلاعات وارد شده صحیح نمیباشد.");
+            setErrorShow(true);
+         }
       } else {
+         setErrorMessege("لطفا تمامی ورودی ها را پر کنید.");
          setErrorShow(true);
       }
    };
@@ -40,7 +46,7 @@ export default function Account() {
    };
 
    const inputPasswordHandler = (event) => {
-      setPassword(event.target.value);
+      setPassword(+event.target.value);
    };
 
    const inputEmailHandler = (event) => {
@@ -50,7 +56,7 @@ export default function Account() {
    return (
       <section className="account">
          <Header></Header>
-         <div className={`account-error ${errorShow ? "account-error__show" : null}`}>لطفا تمامی ورودی ها را پر کنید.</div>
+         <div className={`account-error ${errorShow ? "account-error__show" : null}`}>{errorMessege}</div>
          <div className="containers">
             <div className="row account-row">
                <div className=" col-md-7 col-xl-8 ">
@@ -125,7 +131,6 @@ export default function Account() {
                </div>
             </div>
          </div>
-         {navigate === "not" ? <Navigate to="/error" /> : navigate === "yes" ? <Navigate to="/dashboard" /> : null}
       </section>
    );
 }

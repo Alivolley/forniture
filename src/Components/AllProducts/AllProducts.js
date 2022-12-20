@@ -3,17 +3,17 @@ import "./AllProducts.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import RealCard from "../RealCard/RealCard";
+import axiosInstance from "../../Utils/axios";
+import { Spinner } from "react-bootstrap";
 
 export default function AllProducts() {
-   const [newestProduct, setNewestProduct] = useState([]);
+   const [newestProduct, setNewestProduct] = useState();
 
    useEffect(() => {
-      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
-         .then((res) => res.json())
-         .then((data) => {
-            setNewestProduct(Object.entries(data));
-         });
+      axiosInstance.get(`/all-products/`).then((res) => setNewestProduct(res.data));
    }, []);
+
+   console.log(newestProduct);
 
    return (
       <>
@@ -22,19 +22,23 @@ export default function AllProducts() {
             <h2 className="our-services-title">در این صفحه به تمامی محصولات فروشگاه دسترسی دارید . </h2>
             <div className="our-services-line"></div>
             <div className="row">
-               {newestProduct.map((product) => {
-                  return (
-                     <RealCard
-                        key={product[0]}
-                        keyName={product[0]}
-                        pictures={product[1].pictures}
-                        name={product[1].name}
-                        Category={product[1].Category}
-                        description={product[1].description}
-                        price={Number(product[1].price).toLocaleString("fa-IR")}
-                     ></RealCard>
-                  );
-               })}
+               {newestProduct ? (
+                  newestProduct.map((product) => {
+                     return (
+                        <RealCard
+                           key={product.id}
+                           keyName={product.id}
+                           pictures={`https://furniture.pythonanywhere.com${product.pictures[0].picture}`}
+                           name={product.name}
+                           Category={product.category}
+                           description={product.description}
+                           price={Number(product.price).toLocaleString("fa-IR")}
+                        />
+                     );
+                  })
+               ) : (
+                  <Spinner animation="border" className="spinner-custom" />
+               )}
             </div>
          </div>
          <Footer></Footer>
