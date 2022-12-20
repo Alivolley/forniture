@@ -2,6 +2,7 @@
    direction: rtl;
    margin-top: 20px;
    font-family: "vazir";
+   cursor: pointer;
 }
 
 .dashboard-sidebar__list {

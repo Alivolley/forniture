@@ -1,8 +1,15 @@
+import Cookies from "js-cookie";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./SidebarDashboard.css";
 
 export default function SidebarDashboard() {
+   const navigate = useNavigate();
+
+   const logout = () => {
+      Cookies.remove("login");
+      navigate("/");
+   };
    return (
       <div className="dashboard-side">
          <ul className="dashboard-sidebar__list">
@@ -21,6 +28,10 @@ export default function SidebarDashboard() {
             <NavLink to="/dashboard-productdelete" className="dashboard-sidebar__items">
                حذف کردن یک محصول
             </NavLink>
+            <div className="dashboard-sidebar__items" onClick={logout}>
+               {" "}
+               خروج از حساب کاربری
+            </div>
          </ul>
       </div>
    );

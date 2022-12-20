@@ -6,7 +6,7 @@ export default function MainDashboard() {
       <div className="dashboard-main">
          <div className="row">
             <div className="col-md-6">
-               <img src="/pics/admin-pic.jpg" alt="" className="dashboard-main__img" />
+               <img src="/pics/admin-pic.png" alt="" className="dashboard-main__img" />
             </div>
             <div className="col-md-6">
                <div className="dashboard-main-explain">

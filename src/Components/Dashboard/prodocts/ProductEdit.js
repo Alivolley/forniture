@@ -70,23 +70,6 @@ export default function ProductEdit() {
             }
          })
          .catch((err) => console.log(err));
-
-      // fetch(`https://newestfurniture-9444e-default-rtdb.firebaseio.com/products/${idValue}.json`, {
-      //    method: "PUT",
-      //    body: JSON.stringify({
-      //       Category: categoryValue,
-      //       name: nameValue,
-      //       description: descValue,
-      //       price: priceValue,
-      //    }),
-      // }).then((res) => {
-      //    if (res.status === 200) {
-      //       setSureQues(false);
-      //       setEditShow(false);
-      //       setReload((prev) => (prev = !prev));
-      //       setEditComplete(true);
-      //    }
-      // });
    };
 
    const putCategoryValue = (event) => {
