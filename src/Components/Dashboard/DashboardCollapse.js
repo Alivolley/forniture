@@ -1,9 +1,16 @@
+import Cookies from "js-cookie";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./DashboardCollapse.css";
 
 export default function DashboardCollapse() {
+   const navigate = useNavigate();
    let firstClass = "dashboard-collapse__items";
+
+   const logout = () => {
+      Cookies.remove("login");
+      navigate("/");
+   };
    return (
       <div className="dashboard-collapse">
          <ul className="dashboard-collapse__list">
@@ -27,6 +34,9 @@ export default function DashboardCollapse() {
             <NavLink to="/dashboard-productdelete" className={firstClass}>
                حذف کردن یک محصول
             </NavLink>
+            <div className={firstClass} onClick={logout}>
+               خروج از حساب کاربری
+            </div>
          </ul>
       </div>
    );

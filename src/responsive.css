@@ -77,6 +77,10 @@
    .dashboard-collapse {
       margin: 0 20px !important;
    }
+
+   .account-left-img {
+      display: none;
+   }
 }
 
 /* lg */
