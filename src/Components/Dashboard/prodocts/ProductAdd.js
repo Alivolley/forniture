@@ -127,6 +127,12 @@ export default function ProductAdd() {
                      <label htmlFor="add-product-name">نام مبل :</label>
                      <input id="add-product-name" type="text" className="add-product-name" placeholder="..." onChange={putNameValue} value={nameValue} />
                   </div>
+
+                  <div className="add-product-price__wrapper">
+                     <label htmlFor="add-product-price">قیمت :</label>
+                     <input id="add-product-price" type="text" className="add-product-price" placeholder="..." onChange={putPriceValue} value={priceValue} />
+                  </div>
+
                   <div className="add-product-desc__wrapper">
                      <label htmlFor="add-product-desc">توضیحات :</label>
                      <textarea
@@ -136,13 +142,8 @@ export default function ProductAdd() {
                         onChange={putDescValue}
                         value={descValue}
                         cols="30"
-                        rows="10"
+                        rows="7"
                      ></textarea>
-                     {/* <input id="add-product-desc" type="text" className="add-product-desc" placeholder="..." onChange={putDescValue} value={descValue} /> */}
-                  </div>
-                  <div className="add-product-price__wrapper">
-                     <label htmlFor="add-product-price">قیمت :</label>
-                     <input id="add-product-price" type="text" className="add-product-price" placeholder="..." onChange={putPriceValue} value={priceValue} />
                   </div>
 
                   <div className="add-product-picture__wrapper">

@@ -2,20 +2,24 @@ import React, { useEffect, useState } from "react";
 import Dashboard from "../Dashbaord";
 import "./ProductEdit.css";
 import { AiOutlineClose, AiOutlineCloseCircle } from "react-icons/ai";
+import axiosInstance from "../../../Utils/axios";
+import { Alert } from "bootstrap";
+import { Spinner } from "react-bootstrap";
 
 export default function ProductEdit() {
    const [categoryValue, setCategoryValue] = useState("");
+   const [categoryId, setCategoryId] = useState("");
    const [nameValue, setNameValue] = useState("");
    const [descValue, setDescValue] = useState("");
    const [priceValue, setPriceValue] = useState("");
-   const [picturesValue, setPicturesValue] = useState("");
    const [idValue, setidValue] = useState("");
 
-   const [gottenProduct, setGottenProduct] = useState([]);
+   const [gottenProduct, setGottenProduct] = useState();
    const [editShow, setEditShow] = useState(false);
    const [sureQues, setSureQues] = useState(false);
    const [reloade, setReload] = useState(false);
    const [editComplete, setEditComplete] = useState(false);
+
    let Categories = [
       { id: 1, item: "راحتی" },
       { id: 2, item: "سلطنتی" },
@@ -23,52 +27,77 @@ export default function ProductEdit() {
    ];
 
    useEffect(() => {
-      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
-         .then((res) => res.json())
-         .then((data) => {
-            setGottenProduct(Object.entries(data));
-         });
+      axiosInstance.get(`/all-products/`).then((res) => setGottenProduct(res.data));
    }, []);
 
    useEffect(() => {
-      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/products.json")
-         .then((res) => res.json())
-         .then((data) => {
-            setGottenProduct(Object.entries(data));
-         });
+      axiosInstance.get(`/all-products/`).then((res) => setGottenProduct(res.data));
    }, [reloade]);
 
-   const openEditModal = (id, pictures, name, Category, description, price) => {
+   const openEditModal = (id, name, Category, description, price) => {
       setidValue(id);
-      setPicturesValue(pictures);
-      setCategoryValue(Category);
       setNameValue(name);
       setDescValue(description);
       setPriceValue(price);
+      setCategoryId(Category);
       setEditShow(true);
+
+      if (Category === 1) {
+         setCategoryValue("راحتی");
+      } else if (Category === 2) {
+         setCategoryValue("سلطنتی");
+      } else if (Category === 3) {
+         setCategoryValue("کلاسیک");
+      }
    };
 
    const updateProduct = () => {
-      fetch(`https://newestfurniture-9444e-default-rtdb.firebaseio.com/products/${idValue}.json`, {
-         method: "PUT",
-         body: JSON.stringify({
-            pictures: picturesValue,
-            Category: categoryValue,
-            name: nameValue,
-            description: descValue,
-            price: priceValue,
-         }),
-      }).then((res) => {
-         if (res.status === 200) {
-            setSureQues(false);
-            setEditShow(false);
-            setReload((prev) => (prev = !prev));
-            setEditComplete(true);
-         }
-      });
+      let editedCard = {
+         category: categoryId,
+         name: nameValue,
+         description: descValue,
+         price: priceValue,
+      };
+
+      axiosInstance
+         .put(`/product/${idValue}/`, JSON.stringify(editedCard))
+         .then((res) => {
+            if (res.status === 200) {
+               setSureQues(false);
+               setEditShow(false);
+               setReload((prev) => (prev = !prev));
+               setEditComplete(true);
+            }
+         })
+         .catch((err) => console.log(err));
+
+      // fetch(`https://newestfurniture-9444e-default-rtdb.firebaseio.com/products/${idValue}.json`, {
+      //    method: "PUT",
+      //    body: JSON.stringify({
+      //       Category: categoryValue,
+      //       name: nameValue,
+      //       description: descValue,
+      //       price: priceValue,
+      //    }),
+      // }).then((res) => {
+      //    if (res.status === 200) {
+      //       setSureQues(false);
+      //       setEditShow(false);
+      //       setReload((prev) => (prev = !prev));
+      //       setEditComplete(true);
+      //    }
+      // });
    };
 
    const putCategoryValue = (event) => {
+      if (event.target.value === "راحتی") {
+         setCategoryId(1);
+      } else if (event.target.value === "سلطنتی") {
+         setCategoryId(2);
+      } else if (event.target.value === "کلاسیک") {
+         setCategoryId(3);
+      }
+
       setCategoryValue(event.target.value);
    };
 
@@ -95,32 +124,46 @@ export default function ProductEdit() {
       }, 3000);
    }
 
+   console.log(gottenProduct);
+
    return (
       <>
          <Dashboard></Dashboard>
          <div className="containers">
             <div className="row">
-               {gottenProduct.map((product) => {
-                  return (
-                     <div key={product[0]} className="product-list col-12 col-md-6 col-xl-4">
-                        <div className="product-list-cart">
-                           <img src={product[1].pictures} alt="" className="product-list-img" />
-                           <h2 className="product-list-title">{product[1].name}</h2>
-                           <p className="product-list-type">از دسته : {product[1].Category}</p>
-                           <p className="product-list-desc">{product[1].description}</p>
-                           <p className="product-list-price">قیمت : {Number(product[1].price).toLocaleString("fa-IR")}</p>
-                           <button
-                              className="product-list-edit"
-                              onClick={() =>
-                                 openEditModal(product[0], product[1].pictures, product[1].name, product[1].Category, product[1].description, product[1].price)
-                              }
-                           >
-                              ویرایش
-                           </button>
-                        </div>
-                     </div>
-                  );
-               })}
+               {gottenProduct ? (
+                  gottenProduct.length ? (
+                     gottenProduct.map((product) => {
+                        return (
+                           <div key={product.id} className="product-list col-12 col-md-6 col-xl-4">
+                              <div className="product-list-cart">
+                                 <img src={`https://furniture.pythonanywhere.com${product.pictures[0].picture}`} alt="" className="product-list-img" />
+                                 <h2 className="product-list-title">{product.name}</h2>
+                                 <p className="product-list-type">
+                                    از دسته : {product.category === 1 && "راحتی"}
+                                    {product.category === 2 && "سلطنتی"}
+                                    {product.category === 3 && "کلاسیک"}
+                                 </p>
+                                 <p className="product-list-desc">{product.description}</p>
+                                 <p className="product-list-price">قیمت : {Number(product.price).toLocaleString("fa-IR")}</p>
+                                 <button
+                                    className="product-list-edit"
+                                    onClick={() => openEditModal(product.id, product.name, product.category, product.description, product.price)}
+                                 >
+                                    ویرایش
+                                 </button>
+                              </div>
+                           </div>
+                        );
+                     })
+                  ) : (
+                     <Alert variant="secondary" className="alert">
+                        هیچ محصولی وجود ندارد.
+                     </Alert>
+                  )
+               ) : (
+                  <Spinner animation="border" className="spinner-custom" />
+               )}
             </div>
          </div>
          {editShow && (
@@ -129,17 +172,7 @@ export default function ProductEdit() {
                   <AiOutlineClose className="edit-modal__close-btn" onClick={() => setEditShow(false)}></AiOutlineClose>
                   <div className="add-product-Category__wrapper">
                      <label htmlFor="add-product-Category">دسته بندی :</label>
-                     <select
-                        defaultValue="دسته بندی"
-                        name=""
-                        id="add-product-Category"
-                        className="add-product-Category"
-                        onChange={putCategoryValue}
-                        value={categoryValue}
-                     >
-                        <option value="دسته بندی" className="add-product-Category__items" disabled>
-                           دسته بندی
-                        </option>
+                     <select id="add-product-Category" className="add-product-Category" onChange={putCategoryValue} value={categoryValue}>
                         {Categories.map((Category) => {
                            return (
                               <option key={Category.id} value={Category.item} className="add-product-picture__items">
