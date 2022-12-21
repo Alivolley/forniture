@@ -107,7 +107,7 @@ export default function ProductEdit() {
       }, 3000);
    }
 
-   console.log(gottenProduct);
+   // console.log(gottenProduct);
 
    return (
       <>

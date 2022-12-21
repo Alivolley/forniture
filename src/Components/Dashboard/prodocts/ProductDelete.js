@@ -29,7 +29,6 @@ export default function ProductDelete() {
       axiosInstance
          .delete(`/product/${productId}/`)
          .then((res) => {
-            console.log(res);
             setReload((prev) => (prev = !prev));
             setSureQues(false);
             setDeleteComplete(true);

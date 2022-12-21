@@ -6,7 +6,7 @@ import axiosInstance from "../../Utils/axios";
 import { Spinner } from "react-bootstrap";
 
 export default function OurNewProducts() {
-   const [newestProduct, setNewestProduct] = useState([]);
+   const [newestProduct, setNewestProduct] = useState();
 
    useEffect(() => {
       axiosInstance.get(`/all-products/`).then((res) => setNewestProduct(res.data));
@@ -39,23 +39,6 @@ export default function OurNewProducts() {
                ) : (
                   <Spinner animation="border" className="spinner-custom" />
                )}
-               {/* {newestProduct.map((product, index) => {
-                  if (index < 3) {
-                     return (
-                        <RealCard
-                           key={product[0]}
-                           keyName={product[0]}
-                           pictures={product[1].pictures}
-                           name={product[1].name}
-                           Category={product[1].Category}
-                           description={product[1].description}
-                           price={Number(product[1].price).toLocaleString("fa-IR")}
-                        ></RealCard>
-                     );
-                  } else {
-                     return null;
-                  }
-               })} */}
             </div>
             <Link to="/allproducts" className="new-products__show-all">
                مشاهده ی تمام محصولات

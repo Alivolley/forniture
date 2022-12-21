@@ -117,6 +117,7 @@
    opacity: 0.976;
    font-family: "vazir";
    direction: rtl;
+   z-index: 2;
 }
 
 .edit-product__modal--icon {

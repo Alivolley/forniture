@@ -8,8 +8,9 @@ import { BsWhatsapp, BsTelegram, BsFillTelephoneFill, BsSearch } from "react-ico
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import CollapseMenu from "./CollapseMenu";
+import axiosInstance from "../../Utils/axios";
 
-export default function Header() {
+export default function Header({ getAgain }) {
    const [show, setShow] = useState(false);
    const [basketCount, setBasketCount] = useState([]);
    const [searchBar, setSearchBar] = useState(false);
@@ -24,21 +25,16 @@ export default function Header() {
    };
 
    useEffect(() => {
-      fetch("https://newestfurniture-9444e-default-rtdb.firebaseio.com/basket.json")
-         .then((res) => res.json())
-         .then((data) => {
-            setBasketCount(Object.entries(data));
-         })
-         .catch((data) => {
-            setBasketCount([]);
-         });
-   }, []);
+      axiosInstance.get(`/basket/1/`).then((res) => setBasketCount(res.data));
+   }, [getAgain]);
 
    const searchHandler = () => {
       if (searchValue.trim()) {
          navigate(`/searched/${searchValue}`);
       }
    };
+
+   // console.log(basketCount);
 
    return (
       <>

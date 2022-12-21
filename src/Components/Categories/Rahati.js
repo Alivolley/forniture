@@ -12,7 +12,7 @@ export default function Rahati() {
       axiosInstance.get(`/products/1/`).then((res) => setNewestProduct(res.data));
    }, []);
 
-   console.log(newestProduct);
+   // console.log(newestProduct);
 
    return (
       <>

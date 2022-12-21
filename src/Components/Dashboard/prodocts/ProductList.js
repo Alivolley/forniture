@@ -12,7 +12,7 @@ export default function Productlist() {
       axiosInstance.get(`/all-products/`).then((res) => setGottenProduct(res.data));
    }, []);
 
-   console.log(gottenProduct);
+   // console.log(gottenProduct);
 
    return (
       <>

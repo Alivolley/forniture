@@ -15,17 +15,18 @@ import { Navigation, Pagination } from "swiper";
 export default function ChosenCard() {
    const [chosenProduct, setChosenProduct] = useState();
    const [addBasketDone, setAddBasketDone] = useState(false);
+   const [reload, setReload] = useState(false);
 
    let params = useParams();
 
    useEffect(() => {
       axiosInstance.get(`product/${params.id}/`).then((res) => setChosenProduct(res.data));
-   }, []);
+   }, [reload]);
 
    const addToBasket = () => {
-      axiosInstance.post(`basket/${chosenProduct.id}/`).then((res) => {
-         console.log(res);
-         //       setAddBasketDone(true);
+      axiosInstance.post(`/basket/${chosenProduct.id}/`).then((res) => {
+         setAddBasketDone(true);
+         setReload((prev) => !prev);
       });
    };
 
@@ -35,17 +36,17 @@ export default function ChosenCard() {
       }, 3000);
    }
 
-   console.log(chosenProduct);
+   // console.log(chosenProduct);
 
    return (
       <>
-         <Header></Header>
+         <Header getAgain={reload}></Header>
          {chosenProduct ? (
             <div className="containers">
                <div className="chosen-card row">
                   <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination]} className="mySwiper col-12 col-xl-6">
                      {chosenProduct.pictures.map((image) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={image.picture}>
                            <img src={`https://furniture.pythonanywhere.com${image.picture}`} alt="" className="chosen-card__img" />
                         </SwiperSlide>
                      ))}
@@ -57,11 +58,16 @@ export default function ChosenCard() {
                         {chosenProduct.category === 2 && "سلطنتی"}
                         {chosenProduct.category === 3 && "کلاسیک"} میباشد .
                      </p>
-                     <pre className="chosen-card__explain">{chosenProduct.description}</pre>
+                     <p className="chosen-card__explain">{chosenProduct.description}</p>
                      <p className="chosen-card-price">قیمت : {Number(chosenProduct.price).toLocaleString("fa-IR")}</p>
-                     <button className="chosen-card__add-basket" onClick={() => addToBasket()}>
-                        افزودن به سبد خرید
-                     </button>
+
+                     {chosenProduct.is_in_basket ? (
+                        <button className="chosen-card__add-basket">محصول در سبد خرید موجود است </button>
+                     ) : (
+                        <button className="chosen-card__add-basket" onClick={() => addToBasket()}>
+                           افزودن به سبد خرید
+                        </button>
+                     )}
                   </div>
                </div>
             </div>

@@ -19,7 +19,7 @@ export default function Searched() {
       });
    }, [params]);
 
-   console.log(newestProduct);
+   // console.log(newestProduct);
 
    return (
       <>

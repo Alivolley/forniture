@@ -41,20 +41,6 @@ export default function ProductAdd() {
    const sendProductData = (event) => {
       event.preventDefault();
       if ((pictureValue, categoryValue, nameValue, descValue, priceValue)) {
-         // let srcpicture = pictures.find((item) => {
-         //    return item.name === pictureValue;
-         // });
-
-         // let newProduct = {
-         //    pictures: srcpicture.address,
-         //    Category: categoryValue,
-         //    name: nameValue,
-         //    description: descValue,
-         //    price: priceValue,
-         // };
-
-         // console.log(pictureValue);
-
          let formData = new FormData();
 
          pictureValue.forEach((file) => {
@@ -73,16 +59,14 @@ export default function ProductAdd() {
                },
             })
             .then((res) => {
-               console.log(res);
                if (res.status === 200) {
                   setDoneModal(true);
-                  setPictureValue("");
+                  setPictureValue([]);
                   setCategoryValue("");
                   setNameValue("");
                   setDescValue("");
                   setPriceValue("");
                }
-               res.json();
             })
             .catch((err) => console.log(err));
       }

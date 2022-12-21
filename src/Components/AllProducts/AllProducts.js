@@ -13,7 +13,7 @@ export default function AllProducts() {
       axiosInstance.get(`/all-products/`).then((res) => setNewestProduct(res.data));
    }, []);
 
-   console.log(newestProduct);
+   // console.log(newestProduct);
 
    return (
       <>

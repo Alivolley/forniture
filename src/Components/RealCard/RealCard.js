@@ -14,7 +14,7 @@ export default function RealCard(props) {
                   {props.Category === 2 && "سلطنتی"}
                   {props.Category === 3 && "کلاسیک"}
                </p>
-               <pre className="product-list-desc">{props.description}</pre>
+               <p className="product-list-desc">{props.description}</p>
                <p className="product-list-price">قیمت : {props.price} تومان</p>
                <Link to={`/product/${props.keyName}`} className="product-list-edit product-newest-link">
                   مشاهده جزییات
