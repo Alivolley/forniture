@@ -28,7 +28,7 @@ export default function Account() {
       event.preventDefault();
 
       if (userName && password && email) {
-         if (userName === "ali" && password === 1234 && email === "ali@gmail.com") {
+         if (userName === "ali" && password === "1234" && email === "ali@gmail.com") {
             Cookies.set("login", "ok", { expires: 3 });
             navigate("/dashboard");
          } else {
@@ -46,7 +46,7 @@ export default function Account() {
    };
 
    const inputPasswordHandler = (event) => {
-      setPassword(+event.target.value);
+      setPassword(event.target.value);
    };
 
    const inputEmailHandler = (event) => {

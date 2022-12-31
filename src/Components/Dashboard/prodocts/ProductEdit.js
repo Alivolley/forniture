@@ -3,7 +3,7 @@ import Dashboard from "../Dashbaord";
 import "./ProductEdit.css";
 import { AiOutlineClose, AiOutlineCloseCircle } from "react-icons/ai";
 import axiosInstance from "../../../Utils/axios";
-import { Alert } from "bootstrap";
+import { Alert } from "react-bootstrap";
 import { Spinner } from "react-bootstrap";
 
 export default function ProductEdit() {
